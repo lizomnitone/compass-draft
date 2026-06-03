@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources - Compass Bending</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+    table thead {
+      background-color: var(--primary-brown);
+      color: white;
+    }
+    table th {
+      padding: 1rem;
+      text-align: left;
+      border: 1px solid #aaa;
+      font-weight: bold;
+    }
+    table td {
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+    }
+    table tbody tr:nth-child(odd) {
+      background-color: var(--light-gray);
+    }
+    .accordion-section {
+      margin: 0;
+      border: none;
+      border-radius: 0;
+      overflow: visible;
+      display: none;
+    }
+    .accordion-section.active {
+      display: block;
+      animation: fadeIn 0.4s ease-in;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    .accordion-header {
+      background-color: #1A1A1A;
+      color: white;
+      padding: 1.5rem 2rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s ease;
+      user-select: none;
+      border-bottom: 3px solid var(--orange);
+    }
+    .accordion-header h2 {
+      margin: 0;
+      color: white;
+      font-size: 1.2rem;
+    }
+    .accordion-toggle {
+      display: none;
+    }
+    .accordion-header:hover {
+      background-color: var(--rust-orange);
+    }
+    .accordion-header:hover h2 {
+      color: black !important;
+    }
+    .accordion-content {
+      display: block;
+      padding: 2rem;
+      background-color: white;
+    }
+    .resource-list {
+      list-style-position: inside;
+      line-height: 1.8;
+      color: var(--text-gray);
+      padding-left: 1rem;
+    }
+    .resource-list li {
+      margin-bottom: 0.75rem;
+    }
+    .resource-list a {
+      color: var(--orange);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .resource-list a:hover {
+      color: var(--off-black);
+      text-decoration: underline;
+    }
+    .faq-item {
+      margin-bottom: 1.5rem;
+      padding: 1.5rem;
+      background-color: var(--white);
+      border-left: 4px solid var(--orange);
+      border-radius: 4px;
+      border: 1px solid var(--orange);
+    }
+    .faq-item h3 {
+      margin-top: 0;
+      color: var(--off-black);
+    }
+    .faq-item p {
+      margin-top: 1rem;
+      line-height: 1.8;
+      color: var(--text-gray);
+    }
+    .glossary-term {
+      margin-bottom: 1.5rem;
+    }
+    .glossary-term strong {
+      color: #1A1A1A;
+      font-size: 1.05rem;
+    }
+    .glossary-term p {
+      margin: 0.5rem 0 0 0;
+      color: #555;
+    }
+    .glossary-letter {
+      color: #1A1A1A;
+      font-size: 1.3rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--orange);
+    }
+    .capabilities-wrapper {
+      display: flex;
+      gap: 0;
+      max-width: 1325px;
+      margin: 0 auto;
+    }
+    .toc-sidebar {
+      display: none;
+      width: 220px;
+      background-color: #1A1A1A;
+      border-right: 3px solid var(--orange);
+      padding: 0;
+      flex-shrink: 0;
+      position: sticky;
+      top: 0;
+      height: auto;
+      max-height: 100vh;
+      overflow-y: auto;
+      z-index: 100;
+    }
+    .toc-sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+    .toc-sidebar li {
+      padding: 0;
+      margin: 0;
+    }
+    .toc-sidebar a {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: white;
+      text-decoration: none;
+      font-size: 0.95rem;
+      border-left: 3px solid transparent;
+      transition: all 0.3s ease;
+    }
+    .toc-sidebar a:hover {
+      color: var(--orange);
+      background-color: transparent;
+      border-left-color: transparent;
+    }
+    .toc-sidebar a.active {
+      color: black;
+      background-color: var(--orange);
+      border-left-color: transparent;
+      font-weight: bold;
+    }
+    .content-section {
+      flex: 1;
+      max-width: 70%;
+      padding: 2rem 2rem;
+    }
+    @media (min-width: 1400px) {
+      .capabilities-wrapper {
+        display: flex;
+      }
+      .toc-sidebar {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header>
+    <div class="header-content">
+      <a href="index.html" class="logo">
+        <img src="assets/images/logoblack.png" alt="Compass Bending Logo">
+      </a>
+      <nav>
+        <ul class="main-menu">
+          <li><a href="capabilities.html">Capabilities</a></li>
+          <li><a href="applications.html">Applications</a></li>
+
+          <li><a href="resources.html">Resources</a></li>
+
+          <!-- About Dropdown -->
+          <li class="dropdown">
+            <a href="about.html">About</a>
+            <ul class="submenu">
+              <li><a href="about.html">Our Story</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="careers.html">Careers</a></li>
+            </ul>
+          </li>
+
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <div class="section-header">
+    <div class="content-section">
+      <h2>Resources</h2>
+      <p>Technical guides, FAQs, and documentation.</p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="capabilities-wrapper">
+    <div class="toc-sidebar">
+      <ul>
+        <li><a href="#faqs">FAQs</a></li>
+        <li><a href="#reference-materials">Reference Materials</a></li>
+        <li><a href="#documents">Documents</a></li>
+        <li><a href="#glossary">Glossary</a></li>
+      </ul>
+    </div>
+
+    <div class="content-section">
+
+      <!-- FAQs Section -->
+      <div class="accordion-section active" id="faqs">
+        <div class="accordion-header">
+          <h2 style="color: white; margin: 0;">Frequently Asked Questions</h2>
+          <span class="accordion-toggle">▼</span>
+        </div>
+        <div class="accordion-content">
+          
+          <div class="faq-item">
+            <h3>Do you do small jobs?</h3>
+            <p>Yes. We are doing small jobs all the time, some of them for tiny parts and small quantities.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Do you only do work for businesses?</h3>
+            <p>No. We work for individuals for personal projects as well as what we do for businesses.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Can I supply my own material?</h3>
+            <p>Yes. We can supply material but will work with yours if that's your preference. If you like, we can quote material and labour separately so you can decide if you'd want us to supply material or not.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Do you only work with steel?</h3>
+            <p>No. We work with almost all metals, including carbon steels, stainless steels, aluminum, copper, brass, spring steel, and many others.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Do you do any fabrication or only bending?</h3>
+            <p>We do some fabrication, mostly in steel, but we can also weld aluminum. We also offer stud-welding for concrete anchors and some machining services in our in-house machine shop. These extra capabilities make it easier for our customers to do one-stop shopping.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reference Materials Section -->
+      <div class="accordion-section" id="reference-materials">
+        <div class="accordion-header">
+          <h2 style="color: white; margin: 0;">Reference Materials</h2>
+          <span class="accordion-toggle">▼</span>
+        </div>
+        <div class="accordion-content">
+
+          <h3 style="color: var(--primary-brown); margin-top: 1.5rem;">Helpful Documents</h3>
+          <p>Download technical PDFs covering pipe bending fundamentals, tooling, and best practices.</p>
+          <ul class="resource-list">
+            <li><a href="#">PLACEHOLDER: Pipe Bending Fundamentals Guide (PDF)</a></li>
+            <li><a href="#">PLACEHOLDER: Roll Bending Techniques Overview (PDF)</a></li>
+            <li><a href="#">PLACEHOLDER: Tube vs Pipe Bending Comparison (PDF)</a></li>
+            <li><a href="#">PLACEHOLDER: Common Defects & How to Avoid Them (PDF)</a></li>
+            <li><a href="#">PLACEBOLDER: Tooling Setup & Best Practices (PDF)</a></li>
+          </ul>
+
+          <h3 style="color: var(--primary-brown); margin-top: 2rem;">Reference Manuals</h3>
+          <p>Access detailed reference materials for bend radii, material properties, and engineering data.</p>
+          <ul class="resource-list">
+            <li><a href="#">PLACEHOLDER: Standard Bend Radii Chart (PDF)</a></li>
+            <li><a href="#">PLACEHOLDER: Material Properties for Steel & Alloys (PDF)</a></li>
+            <li><a href="#">PLACEHOLDER: Aluminum Bending Guidelines (PDF)</a></li>
+            <li><a href="#">PLACEHOLDER: Minimum Radius by Material Type (PDF)</a></li>
+            <li><a href="#">PLACEHOLDER: Engineering Reference Handbook (PDF)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Documents Section -->
+      <div class="accordion-section" id="documents">
+        <div class="accordion-header">
+          <h2 style="color: white; margin: 0;">Documents</h2>
+          <span class="accordion-toggle">▼</span>
+        </div>
+        <div class="accordion-content">
+          <p>Download documents provided by Compass Bending for Compliance, Engineering, and Certifications.</p>
+
+          <ul class="resource-list">
+            <li><a href="#">PLACEHOLDER: Pipe Bending Specifications (PDF)</a></li>
+            <li><a href="#">PLACEHOLDER: Bend Table Specifications (PDF)</a></li>
+            <li><a href="#">PLACEHOLDER: Shipping Terms and Service</a></li>
+            <li><a href="#">PLACEHOLDER: Materials Supported by Compass</a></li>
+            <li><a href="#">PLACEHOLDER: Tooling Setup and Important Information</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Glossary Section -->
+      <div class="accordion-section" id="glossary">
+        <div class="accordion-header">
+          <h2 style="color: white; margin: 0;">Glossary</h2>
+          <span class="accordion-toggle">▼</span>
+        </div>
+        <div class="accordion-content">
+
+          <h3 class="glossary-letter">A</h3>
+          <div class="glossary-term">
+            <strong>Angle Correction</strong>
+            <p>Adjustment made to the initial bend angle to account for springback, ensuring the final bend meets specification.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Annealing</strong>
+            <p>Heat treatment process that softens metal and relieves internal stress, making material more ductile and easier to bend.</p>
+          </div>
+
+          <h3 class="glossary-letter">B</h3>
+          <div class="glossary-term">
+            <strong>Back-Bending</strong>
+            <p>A secondary bending operation performed in the opposite direction to correct or refine a previous bend.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Bend Allowance</strong>
+            <p>The amount of material consumed or stretched during the bending process, used in calculations for flat pattern layouts.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Bend Radius</strong>
+            <p>The measurement of the curve created by a bend, typically measured from the center of the curve to the inside edge of the bent material.</p>
+          </div>
+
+          <h3 class="glossary-letter">C</h3>
+          <div class="glossary-term">
+            <strong>Centerline Radius (CLR)</strong>
+            <p>The radius measured from the center of the curve to the centerline of the material (for tubes/pipe). The primary specification for bend design.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Coil Bending</strong>
+            <p>A specialized bending technique that creates continuous spiral or helical curves for cooktop burners and custom equipment.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Cold Bending</strong>
+            <p>Bending material at room temperature without heating, commonly used for most commercial bending applications.</p>
+          </div>
+
+          <h3 class="glossary-letter">D</h3>
+          <div class="glossary-term">
+            <strong>Die</strong>
+            <p>A shaped tool that forms the outer profile of the bend. Different dies produce different bend radii and shapes.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Draw Bending</strong>
+            <p>A bending method using a mandrel (internal support) and die to create precise, tight-radius bends for pipe and tube work.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Deformation</strong>
+            <p>The change in shape or dimensions of material as a result of bending. Can be elastic (recovers) or plastic (permanent).</p>
+          </div>
+
+          <h3 class="glossary-letter">E</h3>
+          <div class="glossary-term">
+            <strong>Elastic Recovery</strong>
+            <p>The tendency of material to partially return to its original shape after bending stress is removed, also known as springback.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Elongation</strong>
+            <p>The amount a material stretches during bending, expressed as a percentage of original length.</p>
+          </div>
+
+          <h3 class="glossary-letter">F</h3>
+          <div class="glossary-term">
+            <strong>Fabrication</strong>
+            <p>The process of building, assembling, or constructing metal parts. Includes cutting, bending, welding, and finishing operations.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Flatness Tolerance</strong>
+            <p>The allowable deviation from a perfectly flat surface, specified in engineering drawings.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Flat Pattern</strong>
+            <p>The unfolded, two-dimensional representation of a bent part showing where bends will occur.</p>
+          </div>
+
+          <h3 class="glossary-letter">G</h3>
+          <div class="glossary-term">
+            <strong>Gauge (Wire)</strong>
+            <p>A standardized measurement system for wire or sheet metal thickness. Lower gauge numbers indicate thicker material.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Grain Direction</strong>
+            <p>The directional alignment of crystals in metal, which affects bending performance and material strength.</p>
+          </div>
+
+          <h3 class="glossary-letter">H</h3>
+          <div class="glossary-term">
+            <strong>Heat Treating</strong>
+            <p>Controlled heating and cooling of metal to modify its properties, hardness, and workability.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Hot Bending</strong>
+            <p>Bending metal at elevated temperatures to reduce stress and allow for tighter bends in materials that would otherwise be difficult to bend cold.</p>
+          </div>
+
+          <h3 class="glossary-letter">I</h3>
+          <div class="glossary-term">
+            <strong>Induction Bending</strong>
+            <p>A bending method using electromagnetic induction to heat a localized area of the pipe while bending, reducing springback and enabling tighter radii.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Inside Radius</strong>
+            <p>The measurement of the curve on the inner surface of a bend, from the center point of the curve.</p>
+          </div>
+
+          <h3 class="glossary-letter">M</h3>
+          <div class="glossary-term">
+            <strong>Mandrel</strong>
+            <p>An internal support tool inserted into a tube or pipe during bending to prevent collapse, wrinkles, or deformation of the inside surface.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Material Specification</strong>
+            <p>The documented properties and grade of material, including composition, strength, and workability characteristics.</p>
+          </div>
+
+          <h3 class="glossary-letter">N</h3>
+          <div class="glossary-term">
+            <strong>Neutral Axis</strong>
+            <p>The imaginary line through the thickness of material where there is neither compression nor elongation during bending.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Non-Destructive Testing (NDT)</strong>
+            <p>Inspection methods that evaluate material properties without damaging the part, including ultrasonic, X-ray, and dye penetrant testing.</p>
+          </div>
+
+          <h3 class="glossary-letter">O</h3>
+          <div class="glossary-term">
+            <strong>Offset Bending</strong>
+            <p>Creating a parallel displacement in a pipe or tube by making two bends in opposite directions.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Outside Radius</strong>
+            <p>The measurement of the curve on the outer surface of a bend, measured from the center point of the curve.</p>
+          </div>
+
+          <h3 class="glossary-letter">P</h3>
+          <div class="glossary-term">
+            <strong>Plastic Deformation</strong>
+            <p>Permanent change in shape of material that does not recover after stress is removed, the desired result in bending operations.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Pressure Testing</strong>
+            <p>Hydraulic or pneumatic testing of bent pipes and tubes to verify structural integrity and pressure ratings.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Profile</strong>
+            <p>The cross-sectional shape of material being bent, such as round tube, square tube, channel, angle, or flat bar.</p>
+          </div>
+
+          <h3 class="glossary-letter">R</h3>
+          <div class="glossary-term">
+            <strong>Radius</strong>
+            <p>The distance from the center of a curve to any point on the curve, expressed in inches or millimeters.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Roller</strong>
+            <p>A rotating cylindrical tool used in roll bending to progressively deform material into a curved shape.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Roll Bending</strong>
+            <p>A bending method using rotating rollers to create smooth, large-radius curves in various profiles and materials.</p>
+          </div>
+
+          <h3 class="glossary-letter">S</h3>
+          <div class="glossary-term">
+            <strong>Schedule</strong>
+            <p>A standardized wall thickness classification for pipes and tubes, designated as Schedule 40, Schedule 80, etc.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Set</strong>
+            <p>The permanent deformation that remains in material after bending, measured as a residual angle or radius.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Springback</strong>
+            <p>The elastic recovery of material after bending forces are removed, causing the material to partially return toward its original shape.</p>
+          </div>
+
+          <h3 class="glossary-letter">T</h3>
+          <div class="glossary-term">
+            <strong>Tangent Length</strong>
+            <p>The straight portion of material between the center point of one bend and the start of the next bend.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Tangent Point</strong>
+            <p>The exact location where the straight section of material meets the curved section in a bend.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Tolerance</strong>
+            <p>The allowable variation in dimensions or angles for a finished part, specified in the engineering drawing.</p>
+          </div>
+
+          <h3 class="glossary-letter">U</h3>
+          <div class="glossary-term">
+            <strong>Ultimate Tensile Strength</strong>
+            <p>The maximum stress a material can withstand before breaking or failing under tension.</p>
+          </div>
+
+          <h3 class="glossary-letter">W</h3>
+          <div class="glossary-term">
+            <strong>Wall Thickness</strong>
+            <p>The thickness of material in a pipe, tube, or hollow section, measured in inches or millimeters.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Weld Bending</strong>
+            <p>Bending of welded pipe joints or seams, requiring special care to avoid cracking or stress concentration at weld lines.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Wrinkle</strong>
+            <p>An undesirable fold or crease on the inside surface of a bend, typically caused by inadequate mandrel support or excessive bending force.</p>
+          </div>
+
+          <h3 class="glossary-letter">Y</h3>
+          <div class="glossary-term">
+            <strong>Yield Strength</strong>
+            <p>The stress at which material begins to deform permanently, an important property for determining bending difficulty.</p>
+          </div>
+
+          <h3 class="glossary-letter">Z</h3>
+          <div class="glossary-term">
+            <strong>Zero-Based Dimensioning</strong>
+            <p>A dimensioning system where all measurements reference a single origin point, improving accuracy in complex bent parts.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <section style="margin-top: 3rem;">
+        <h2>Let's Get Started</h2>
+        <div class="contact-section">
+
+          <div class="contact-box">
+            <h3>Contact Us</h3>
+            <form>
+              <input type="text" name="name" placeholder="Your Name" required>
+              <input type="email" name="email" placeholder="Your Email" required>
+              <input type="text" name="phone" placeholder="Phone Number">
+              <textarea name="message" placeholder="Your Message" required></textarea>
+              <input type="file" name="attachment" accept=".pdf,.doc,.docx,.dwg,.zip,.jpg,.jpeg,.png">
+              <input type="submit" value="Submit">
+            </form>
+          </div>
+
+          <div class="contact-box">
+            <p>Business hours: 8:00 AM - 4:00 PM MST <br>Monday-Friday</p>
+            <h3 class="mt-1-5">Give us a call:</h3>
+            <p>Yes, we answer our phones!</p>
+            <p class="mt-0-5 mb-0-5" style="font-size: 1rem;">1 (403) 279-6615</p>
+            <p class="mb-0-5" style="font-size: 1rem;">1 (800) 708-7453</p>
+
+            <h3 class="mt-1-5">Drop by:</h3>
+            <p>7320 30 Street S.E. Calgary, Alberta Canada T2C 1W2</p>
+
+            <h3 class="mt-1-5">Or send us an email:</h3>
+            <p>info@compassbending.com</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="capabilities.html">Capabilities</a></li>
+          <li><a href="applications.html">Applications</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Latest Blog Post</h3>
+        <div class="blog-post">
+          <h4>The Misconceptions of Hot Bends</h4>
+          <p>More often than really, a customer will reach out inquiring about a hot bending process. Oftentimes, it's not actually needed to meet the specs they're looking for. We're here to discuss why.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Section Navigation
+    const sections = document.querySelectorAll('.accordion-section');
+
+    // Show a specific section
+    function showSection(sectionId) {
+      sections.forEach(section => section.classList.remove('active'));
+      const targetSection = document.getElementById(sectionId);
+      if (targetSection) {
+        targetSection.classList.add('active');
+      }
+    }
+
+    // Sidebar link click handlers
+    document.querySelectorAll('.toc-sidebar a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const sectionId = this.getAttribute('href').substring(1);
+        showSection(sectionId);
+      });
+    });
+
+    // Accordion header click handlers
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', function() {
+        const section = this.parentElement;
+        section.classList.toggle('active');
+      });
+    });
+
+    // Show FAQs by default
+    showSection('faqs');
+  </script>
+</body>
+</html>

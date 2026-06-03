@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Applications - Compass Bending</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- Header & Navigation -->
+   <header>
+  <div class="header-content">
+    <a href="index.html" class="logo">
+      <img src="assets/images/logoblack.png" alt="Compass Bending Logo">
+    </a>
+    <nav>
+      <ul class="main-menu">
+        <li><a href="capabilities.html">Capabilities</a></li>
+        <li><a href="applications.html">Applications</a></li>
+
+        <li><a href="resources.html">Resources</a></li>
+
+        <!-- About Dropdown -->
+        <li class="dropdown">
+          <a href="about.html">About</a>
+          <ul class="submenu">
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="careers.html">Careers</a></li>
+          </ul>
+        </li>
+
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <!-- Page Header -->
+  <div class="section-header">
+    <div class="content-section">
+      <h2>Applications</h2>
+      <p>Industries we serve.</p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content-section">
+    <section style="margin-top: 2rem;">
+      <p>At Compass Bending, we serve a diverse range of industries with specialized solutions. Our expertise spans multiple sectors where precision metal bending is critical to success.</p>
+      
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 2rem;">
+        <!-- Oil and Gas -->
+        <a href="oil-and-gas.html" style="text-decoration: none;">
+          <div style="background-color: var(--off-black); color: white; padding: 2rem; border-radius: 8px; display: flex; flex-direction: column; justify-content: center; min-height: 250px; border-left: 4px solid var(--orange); background-image: url('assets/images/pipeline.jpg'); background-size: cover; background-position: center; position: relative; overflow: hidden; cursor: pointer; transition: all 0.3s ease;" class="industry-card">
+            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(26, 26, 26, 0.5); transition: background-color 0.3s ease;"></div>
+            <div style="position: relative; z-index: 1;">
+              <h3 style="color: white; margin: 0 0 1rem 0; font-size: 1.5rem;">Oil and Gas</h3>
+              <p style="margin: 0 0 1.5rem 0; font-size: 1.1rem; color: #ccc;">Focus area:</p>
+              <h4 id="oilGasSubsector" style="color: #ddd; margin: 0; font-size: 1.1rem; overflow: hidden;">Pipelines</h4>
+            </div>
+          </div>
+        </a>
+
+        <!-- Industrial Manufacturing -->
+        <div style="background-color: var(--off-black); color: white; padding: 2rem; border-radius: 8px; display: flex; flex-direction: column; justify-content: center; min-height: 250px; border-left: 4px solid var(--orange); background-image: url('assets/images/industrial-mfg.jpg'); background-size: cover; background-position: center; position: relative; overflow: hidden; cursor: pointer; transition: all 0.3s ease;" class="industry-card">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(26, 26, 26, 0.5); transition: background-color 0.3s ease;"></div>
+          <div style="position: relative; z-index: 1;">
+            <h3 style="color: white; margin: 0 0 1rem 0; font-size: 1.5rem;">Industrial Manufacturing</h3>
+            <p style="margin: 0 0 1.5rem 0; font-size: 1.1rem; color: #ccc;">Focus area:</p>
+            <h4 id="industrialSubsector" style="color: #ddd; margin: 0; font-size: 1.1rem; overflow: hidden;">Equipment frames</h4>
+          </div>
+        </div>
+
+        <!-- Automotive -->
+        <div style="background-color: var(--off-black); color: white; padding: 2rem; border-radius: 8px; display: flex; flex-direction: column; justify-content: center; min-height: 250px; border-left: 4px solid var(--orange); background-image: url('assets/images/automotive.jpg'); background-size: cover; background-position: center; position: relative; overflow: hidden; cursor: pointer; transition: all 0.3s ease;" class="industry-card">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(26, 26, 26, 0.5); transition: background-color 0.3s ease;"></div>
+          <div style="position: relative; z-index: 1;">
+            <h3 style="color: white; margin: 0 0 1rem 0; font-size: 1.5rem;">Automotive</h3>
+            <p style="margin: 0 0 1.5rem 0; font-size: 1.1rem; color: #ccc;">Focus area:</p>
+            <h4 id="automotiveSubsector" style="color: #ddd; margin: 0; font-size: 1.1rem; overflow: hidden;">Exhaust systems</h4>
+          </div>
+        </div>
+
+        <!-- Art Installations/Ornamental -->
+        <div style="background-color: var(--off-black); color: white; padding: 2rem; border-radius: 8px; display: flex; flex-direction: column; justify-content: center; min-height: 250px; border-left: 4px solid var(--orange); background-image: url('assets/images/sculpture.jpg'); background-size: cover; background-position: center; position: relative; overflow: hidden; cursor: pointer; transition: all 0.3s ease;" class="industry-card">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(26, 26, 26, 0.5); transition: background-color 0.3s ease;"></div>
+          <div style="position: relative; z-index: 1;">
+            <h3 style="color: white; margin: 0 0 1rem 0; font-size: 1.5rem;">Art & Ornamental</h3>
+            <p style="margin: 0 0 1.5rem 0; font-size: 1.1rem; color: #ccc;">Focus area:</p>
+            <h4 id="artSubsector" style="color: #ddd; margin: 0; font-size: 1.1rem; overflow: hidden;">Sculptures</h4>
+          </div>
+        </div>
+
+        <!-- Architecture -->
+        <div style="background-color: var(--off-black); color: white; padding: 2rem; border-radius: 8px; display: flex; flex-direction: column; justify-content: center; min-height: 250px; border-left: 4px solid var(--orange); background-image: url('assets/images/architecture.jpg'); background-size: cover; background-position: center; position: relative; overflow: hidden; cursor: pointer; transition: all 0.3s ease;" class="industry-card">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(26, 26, 26, 0.5); transition: background-color 0.3s ease;"></div>
+          <div style="position: relative; z-index: 1;">
+            <h3 style="color: white; margin: 0 0 1rem 0; font-size: 1.5rem;">Architecture</h3>
+            <p style="margin: 0 0 1.5rem 0; font-size: 1.1rem; color: #ccc;">Focus area:</p>
+            <h4 id="architectureSubsector" style="color: #ddd; margin: 0; font-size: 1.1rem; overflow: hidden;">Structural elements</h4>
+          </div>
+        </div>
+
+        <!-- Civil Infrastructure -->
+        <div style="background-color: var(--off-black); color: white; padding: 2rem; border-radius: 8px; display: flex; flex-direction: column; justify-content: center; min-height: 250px; border-left: 4px solid var(--orange); background-image: url('assets/images/bike-rack.jpg'); background-size: cover; background-position: center; position: relative; overflow: hidden; cursor: pointer; transition: all 0.3s ease;" class="industry-card">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(26, 26, 26, 0.5); transition: background-color 0.3s ease;"></div>
+          <div style="position: relative; z-index: 1;">
+            <h3 style="color: white; margin: 0 0 1rem 0; font-size: 1.5rem;">Civil Infrastructure</h3>
+            <p style="margin: 0 0 1.5rem 0; font-size: 1.1rem; color: #ccc;">Focus area:</p>
+            <h4 id="civilSubsector" style="color: #ddd; margin: 0; font-size: 1.1rem; overflow: hidden;">Bridges</h4>
+          </div>
+        </div>
+
+        <!-- Personal Projects -->
+        <div style="background-color: var(--off-black); color: white; padding: 2rem; border-radius: 8px; display: flex; flex-direction: column; justify-content: center; min-height: 250px; border-left: 4px solid var(--orange); background-image: url('assets/images/skate-park-steel-800x600.jpeg'); background-size: cover; background-position: center; position: relative; overflow: hidden; cursor: pointer; transition: all 0.3s ease;" class="industry-card">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(26, 26, 26, 0.5); transition: background-color 0.3s ease;"></div>
+          <div style="position: relative; z-index: 1;">
+            <h3 style="color: white; margin: 0 0 1rem 0; font-size: 1.5rem;">Personal Projects</h3>
+            <p style="margin: 0 0 1.5rem 0; font-size: 1.1rem; color: #ccc;">Focus area:</p>
+            <h4 id="personalProjectsSubsector" style="color: #ddd; margin: 0; font-size: 1.1rem; overflow: hidden;">Hobbies</h4>
+          </div>
+        </div>
+
+        <!-- Commercial Products -->
+        <div style="background-color: var(--off-black); color: white; padding: 2rem; border-radius: 8px; display: flex; flex-direction: column; justify-content: center; min-height: 250px; border-left: 4px solid var(--orange); background-image: url('assets/images/copper-coil-scaled.jpeg'); background-size: cover; background-position: center; position: relative; overflow: hidden; cursor: pointer; transition: all 0.3s ease;" class="industry-card">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(26, 26, 26, 0.5); transition: background-color 0.3s ease;"></div>
+          <div style="position: relative; z-index: 1;">
+            <h3 style="color: white; margin: 0 0 1rem 0; font-size: 1.5rem;">Commercial Products</h3>
+            <p style="margin: 0 0 1.5rem 0; font-size: 1.1rem; color: #ccc;">Focus area:</p>
+            <h4 id="commercialProductsSubsector" style="color: #ddd; margin: 0; font-size: 1.1rem; overflow: hidden;">Manufacturing</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="margin-top: 2rem; margin-bottom: 2rem;">
+      <h2>Let's Get Started</h2>
+      <div class="contact-section">
+        <div class="contact-box featured">
+          <p class="mt-1" style="font-weight: bold;">Tell us about your project...</p>
+          <h3 style="color: var(--white); overflow: hidden;">Applications</h3>
+
+          <p class="mt-1" style="font-weight: bold;">If you need support with...</p>
+          <h3 style="color: var(--white); overflow: hidden;">Specifications</h3>
+
+          <p class="mt-1" style="font-weight: bold;">Anything else you think we need to know...</p>
+          <h3 style="color: var(--white); overflow: hidden;">Industry</h3>
+        </div>
+
+        <div class="contact-box">
+          <h3>Contact Us</h3>
+          <form>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="text" name="phone" placeholder="Phone Number">
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <input type="file" name="attachment" accept=".pdf,.doc,.docx,.dwg,.zip,.jpg,.jpeg,.png">
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+
+        <div class="contact-box">
+          <p>Business hours: 8:00 AM - 4:00 PM MST <br>Monday-Friday</p>
+          <h3 class="mt-1-5">Give us a call:</h3>
+          <p>Yes, we answer our phones!</p>
+          <p class="mt-0-5 mb-0-5" style="font-size: 1rem;">1 (403) 279-6615</p>
+          <p class="mb-0-5" style="font-size: 1rem;">1 (800) 708-7453</p>
+
+          <h3 class="mt-1-5">Drop by:</h3>
+          <p>7320 30 Street S.E. Calgary, Alberta Canada T2C 1W2</p>
+
+          <h3 class="mt-1-5">Or send us an email:</h3>
+          <p>info@compassbending.com</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="capabilities.html">Capabilities</a></li>
+          <li><a href="applications.html">Applications</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Latest Blog Post</h3>
+        <div class="blog-post">
+          <h4>The Misconceptions of Hot Bends</h4>
+          <p>More often than really, a customer will reach out inquiring about a hot bending process.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

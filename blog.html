@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Compass Bending</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    .blog-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+    }
+    .blog-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      transform: translateY(-4px);
+    }
+    .blog-card-image {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .blog-card-content {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .blog-card h3 {
+      margin: 0 0 0.75rem 0;
+      color: var(--off-black);
+      font-size: 1.1rem;
+    }
+    .blog-card p {
+      margin: 0 0 1rem 0;
+      color: var(--text-gray);
+      flex: 1;
+      line-height: 1.6;
+    }
+    .blog-date {
+      font-size: 0.9rem;
+      color: var(--primary-brown);
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header>
+    <div class="header-content">
+      <a href="index.html" class="logo">
+        <img src="assets/images/logoblack.png" alt="Compass Bending Logo">
+      </a>
+      <nav>
+        <ul class="main-menu">
+          <li><a href="capabilities.html">Capabilities</a></li>
+          <li><a href="applications.html">Applications</a></li>
+
+          <li><a href="resources.html">Resources</a></li>
+
+          <!-- About Dropdown -->
+          <li class="dropdown">
+            <a href="about.html">About</a>
+            <ul class="submenu">
+              <li><a href="about.html">Our Story</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="careers.html">Careers</a></li>
+            </ul>
+          </li>
+
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <div class="section-header">
+    <div class="content-section">
+      <h2>Blog</h2>
+      <p>The latest at Compass Bending</p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content-section">
+    <section>
+      <h2>Latest Posts</h2>
+      <p>Industry insights, technical guides, and company updates from the Compass Bending team.</p>
+
+      <!-- Blog Grid -->
+      <div class="blog-grid">
+        <!-- Blog Card 1 -->
+        <a href="understanding-roll-bending.html" class="blog-card">
+          <img src="assets/images/roll-bending-snapshot.png" alt="Roll bending process" class="blog-card-image">
+          <div class="blog-card-content">
+            <h3>Understanding Roll Bending</h3>
+            <p>A breakdown of the roll bending process and where it excels. Learn about the capabilities, materials, and applications that make roll bending an ideal choice for large-radius curves and complex geometries.</p>
+            <span class="blog-date">March 2026</span>
+          </div>
+        </a>
+
+        <!-- Blog Card 2 -->
+        <a href="#" class="blog-card">
+          <img src="assets/images/IMG_3010-800x1067.jpeg" alt="Oil and gas applications" class="blog-card-image">
+          <div class="blog-card-content">
+            <h3>Applications in Oil & Gas</h3>
+            <p>How precision bending supports critical infrastructure projects in the oil and gas industry. From pipeline systems to drilling equipment, discover the specialized solutions Compass Bending provides.</p>
+            <span class="blog-date">February 2026</span>
+          </div>
+        </a>
+
+        <!-- Blog Card 3 -->
+        <a href="#" class="blog-card">
+          <img src="assets/images/roll-bending-snapshot.png" alt="Bending methods comparison" class="blog-card-image">
+          <div class="blog-card-content">
+            <h3>Choosing the Right Bending Method</h3>
+            <p>Comparing roll bending, draw bending, compression bending, and induction bending. Each method has unique advantages depending on your material, profile, radius requirements, and project timeline.</p>
+            <span class="blog-date">January 2026</span>
+          </div>
+        </a>
+
+        <!-- Blog Card 4 -->
+        <a href="#" class="blog-card">
+          <img src="assets/images/team-photo.jpg" alt="Compass Bending team" class="blog-card-image">
+          <div class="blog-card-content">
+            <h3>The Misconceptions of Hot Bends</h3>
+            <p>More often than not, customers inquire about hot bending processes. Oftentimes, it's not actually needed to meet specifications. We're here to discuss why cold bending might be the better solution for your project.</p>
+            <span class="blog-date">December 2025</span>
+          </div>
+        </a>
+
+        <!-- Blog Card 5 -->
+        <a href="#" class="blog-card">
+          <img src="assets/images/roll-bending-snapshot.png" alt="Quality assurance" class="blog-card-image">
+          <div class="blog-card-content">
+            <h3>Quality Assurance in Metal Bending</h3>
+            <p>Explore how Compass Bending ensures every project meets the highest quality standards. From material testing to final inspections, learn about our comprehensive quality assurance processes and certifications.</p>
+            <span class="blog-date">November 2025</span>
+          </div>
+        </a>
+
+        <!-- Blog Card 6 -->
+        <a href="#" class="blog-card">
+          <img src="assets/images/IMG_2637-800x600.jpeg" alt="Shop work" class="blog-card-image">
+          <div class="blog-card-content">
+            <h3>From Design to Delivery</h3>
+            <p>Walk through our process from initial consultation to final delivery. Learn how we transform your specifications into precision-bent metal components and how we ensure on-time, reliable delivery to your location.</p>
+            <span class="blog-date">October 2025</span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="capabilities.html">Capabilities</a></li>
+          <li><a href="applications.html">Applications</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Latest Blog Post</h3>
+        <div class="blog-post">
+          <h4>The Misconceptions of Hot Bends</h4>
+          <p>More often than really, a customer will reach out inquiring about a hot bending process. Oftentimes, it's not actually needed to meet the specs they're looking for. We're here to discuss why.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
