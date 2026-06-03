@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capabilities - Compass Bending</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+    table thead {
+      background-color: var(--primary-brown);
+      color: white;
+    }
+    table th {
+      padding: 1rem;
+      text-align: left;
+      border: 1px solid #aaa;
+      font-weight: bold;
+    }
+    table td {
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+    }
+    table tbody tr:nth-child(odd) {
+      background-color: var(--light-gray);
+    }
+    .accordion-section {
+      margin: 0;
+      border: none;
+      border-radius: 0;
+      overflow: visible;
+      display: none;
+    }
+    .accordion-section.active {
+      display: block;
+      animation: fadeIn 0.4s ease-in;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    .accordion-header {
+      background-color: #1A1A1A;
+      color: white;
+      padding: 1.5rem 2rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s ease;
+      user-select: none;
+      border-bottom: 3px solid var(--orange);
+    }
+    .accordion-header h3 {
+      margin: 0;
+      color: white;
+      font-size: 1.2rem;
+    }
+    .accordion-header h2 {
+      margin: 0;
+      color: white;
+      font-size: 1.2rem;
+    }
+    .accordion-toggle {
+      display: none;
+    }
+    .accordion-header:hover {
+      background-color: var(--rust-orange);
+    }
+    .accordion-header:hover h3,
+    .accordion-header:hover h2 {
+      color: black !important;
+    }
+    .accordion-content {
+      display: block;
+      padding: 2rem;
+      background-color: white;
+    }
+    .capabilities-list {
+      list-style: none;
+      padding: 0;
+    }
+    .capabilities-list li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--light-gray);
+      display: flex;
+      gap: 1rem;
+    }
+    .capabilities-list li:last-child {
+      border-bottom: none;
+    }
+    .capabilities-list strong {
+      color: #1A1A1A;
+      min-width: 150px;
+    }
+    .spec-box {
+      background-color: var(--light-gray);
+      padding: 1.5rem;
+      border-radius: 4px;
+      border-left: 4px solid #EC6F2A;
+    }
+    .spec-box h4 {
+      margin-top: 0;
+      color: #1A1A1A;
+    }
+    .spec-box li:before {
+      content: "✓ ";
+      color: #ffffff;
+      font-weight: bold;
+      margin-left: -1.5rem;
+      margin-right: 0.5rem;
+    }
+    /* Table of Contents Sidebar */
+    .capabilities-wrapper {
+      display: flex;
+      gap: 0;
+      max-width: 1325px;
+      margin: 0 auto;
+    }
+    .toc-sidebar {
+      display: none;
+      width: 220px;
+      background-color: #1A1A1A;
+      border-right: 3px solid var(--orange);
+      padding: 0;
+      flex-shrink: 0;
+      position: sticky;
+      top: 0;
+      height: auto;
+      max-height: 100vh;
+      overflow-y: auto;
+      z-index: 100;
+    }
+    .toc-sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+    .toc-sidebar li {
+      padding: 0;
+      margin: 0;
+    }
+    .toc-sidebar a {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: white;
+      text-decoration: none;
+      font-size: 0.95rem;
+      border-left: 3px solid transparent;
+      transition: all 0.3s ease;
+    }
+    .toc-sidebar a:hover {
+      color: var(--orange);
+      background-color: transparent;
+      border-left-color: transparent;
+    }
+    .toc-sidebar a.active {
+      color: black;
+      background-color: var(--orange);
+      border-left-color: transparent;
+      font-weight: bold;
+    }
+    .content-section {
+      flex: 1;
+      max-width: 70%;
+      padding: 2rem 2rem;
+    }
+    @media (min-width: 1400px) {
+      .capabilities-wrapper {
+        display: flex;
+      }
+      .toc-sidebar {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header>
+  <div class="header-content">
+    <a href="index.html" class="logo">
+      <img src="assets/images/logoblack.png" alt="Compass Bending Logo">
+    </a>
+    <nav>
+      <ul class="main-menu">
+        <li><a href="capabilities.html">Capabilities</a></li>
+        <li><a href="applications.html">Applications</a></li>
+
+        <li><a href="resources.html">Resources</a></li>
+
+        <!-- About Dropdown -->
+        <li class="dropdown">
+          <a href="about.html">About</a>
+          <ul class="submenu">
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="careers.html">Careers</a></li>
+          </ul>
+        </li>
+
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <!-- Page Header -->
+  <div class="section-header">
+    <div class="content-section">
+      <h2>Capabilities</h2>
+      <p>Any way, shape, or form.</p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <!-- Capabilities Main Wrapper -->
+  <div class="capabilities-wrapper">
+    <div class="toc-sidebar">
+      <ul>
+        <li><a href="#roll-bending">Roll Bending</a></li>
+        <li><a href="#draw-bending">Draw Bending</a></li>
+        <li><a href="#coil-bending">Coil Bending</a></li>
+        <li><a href="#specialty-components">Specialty Components</a></li>
+        <li><a href="#stocked-bends">Stocked Bends</a></li>
+        <li><a href="#fabrication-finishing">Fabrication & Finishing</a></li>
+        <li><a href="#coatings-insulation">Coatings & Insulation</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#quality-assurance">Quality Assurance</a></li>
+        <li><a href="#shipping">Shipping</a></li>
+      </ul>
+    </div>
+
+    <div class="content-section">
+
+    <!-- Roll Bending Section -->
+    <div class="accordion-section active" id="roll-bending">
+      <div class="accordion-header">
+        <h2 style="color: white; margin: 0;">Roll Bending</h2>
+        <span class="accordion-toggle">▼</span>
+      </div>
+      <div class="accordion-content">
+        <img src="assets/images/screenshot 2026.png" alt="Roll bending screenshot" style="max-width: 650px; width: 100%; display: block; margin: 1rem auto; border-radius: 4px;">
+        
+        <p style="margin-top: 1rem;">Roll bending uses rotating rollers to create smooth, large-radius curves. Our advanced manual and CNC machines handle diverse profiles and complex geometries, from simple arcs to compound bends. We have bending tables which allow for large projects and complex curves. </p>
+
+      
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Capabilities</th>
+              <th>Specifications</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Profiles</strong></td>
+              <td>Round tube, square tube, angle iron, solid bars, flat bars, channels, beams, plate, custom extruded profiles</td>
+            </tr>
+            <tr>
+              <td><strong>Materials</strong></td>
+              <td>Carbon steel, stainless steel, aluminum, copper, brass, nickel alloys, other workable metals</td>
+            </tr>
+            <tr>
+              <td><strong>Profile Sizes</strong></td>
+              <td>TODO</td>
+            </tr>
+            <tr>
+              <td><strong>Bend Radii</strong></td>
+              <td>TODO</td>
+            </tr>
+            <tr>
+              <td><strong>Complex Bends</strong></td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td><strong>Common Applications</strong></td>
+              <td>Structural components, pipeline bends, architectural/artistic work, handrails, platforms, ornamental designs</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 style="color: var(--primary-brown); margin-top: 2rem;">Equipment Used</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Equipment Type</th>
+              <th>Description & Application</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Manual Roll Bender</strong></td>
+              <td>Traditional roll bending machine with manual adjustment. Operator controls roller position and material feed. Ideal for smaller projects and custom work.</td>
+            </tr>
+            <tr>
+              <td><strong>CNC Roll Bender</strong></td>
+              <td>Computer-controlled system with automatic roller adjustment and material feed. Provides precise, repeatable bends with excellent consistency for production runs.</td>
+            </tr>
+            <tr>
+              <td><strong>Bend Table</strong></td>
+              <td>Accessory device for producing multiple identical bends consistently. Works with both manual and CNC machines.</td>
+            </tr>
+            <tr>
+              <td><strong>Roller Dies</strong></td>
+              <td>Specialized roller shapes for creating complex profiles and specialty bends. Can be custom-made for specific applications.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 style="color: var(--primary-brown); margin-top: 2rem;">Project Gallery</h4>
+        <div class="gallery" style="margin-top: 1.5rem; margin-bottom: 1rem; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+          <div class="gallery-item"><img src="assets/images/Rolled_Stainless_tube_of_Varying_Diameter.jpg" alt="Rolled stainless steel"></div>
+          <div class="gallery-item"><img src="assets/images/IMG_1171-scaled.jpeg" alt="Bending project"></div>
+          <div class="gallery-item"><img src="assets/images/skate-park-steel-800x600.jpeg" alt="Steel bending work"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Draw Bending Section -->
+    <div class="accordion-section" id="draw-bending">
+      <div class="accordion-header">
+        <h2 style="color: white; margin: 0;">Draw Bending</h2>
+        <span class="accordion-toggle">▼</span>
+      </div>
+      <div class="accordion-content">
+        <img src="assets/images/draw-bend.png" alt="Draw bending screenshot" style="max-width: 650px; width: 100%; display: block; margin: 1rem auto; border-radius: 4px;">
+        
+        <p style="margin-top: 1rem;">Draw bending creates precise, tight-radius bends using mandrels and specialized dies. Ideal for complex geometries, heavy pipe, and intricate compound bends. We have hundreds of dies on-hand for common sizes, or if you need something custom, we are experienced in the die creation process.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Capabilities</th>
+              <th>Specifications</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Profiles</strong></td>
+              <td>TODO; Hollow round tube, pipe</td>
+            </tr>
+            <tr>
+              <td><strong>Materials</strong></td>
+              <td>Carbon steel, aluminium, copper, brass, other workable material </td>
+            </tr>
+            <tr>
+              <td><strong>Pipe Diameter Range</strong></td>
+              <td>1/8" to a 6" pipe </td>
+            </tr>
+            <tr>
+              <td><strong>Bend Radii</strong></td>
+              <td>TODO; Wide range - hundreds of dies on-hand for standard radii</td>
+            </tr>
+            <tr>
+              <td><strong>Complex Bends</strong></td>
+              <td>Yes, with dies</td>
+            </tr>
+            <tr>
+              <td><strong>Common Applications</strong></td>
+              <td>Structural components, pipeline bends, artistic and ornamental pieces, high-precision assemblies</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 style="color: var(--primary-brown); margin-top: 2rem;">Equipment Used</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Equipment Type</th>
+              <th>Description & Application</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Draw Bending Machine</strong></td>
+              <td>Dedicated machine with chuck to grip material, mandrel support system, and die holder. Designed specifically for draw bending of pipe and tube.</td>
+            </tr>
+            <tr>
+              <td><strong>Mandrels</strong></td>
+              <td>Internal support tools available in various shapes and sizes to match different pipe diameters and bend requirements. Prevents wall collapse during bending.</td>
+            </tr>
+            <tr>
+              <td><strong>Dies</strong></td>
+              <td>Shaped tools that form the outer profile of the bend. Available for various bend radii. Hundreds of standard dies kept in inventory.</td>
+            </tr>
+            <tr>
+              <td><strong>CNC Draw Bender</strong></td>
+              <td>Computer-controlled draw bending machine for complex, repeatable bends with high precision and consistency.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div style="margin-top: 2rem; margin-bottom: 1rem;">
+          <a href="resources.html#draw-bending" style="display: inline-block; background-color: var(--off-black); color: white; padding: 0.75rem 2rem; text-decoration: none; border-radius: 4px; font-weight: bold; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='var(--orange)'" onmouseout="this.style.backgroundColor='var(--off-black)'">Learn More</a>
+        </div>
+
+          <h4 style="color: var(--primary-brown); margin-top: 2rem;">Project Gallery</h4>
+        <div class="gallery" style="margin-top: 1.5rem; margin-bottom: 1rem; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+          <div class="gallery-item"><img src="assets/images/Rolled_Stainless_tube_of_Varying_Diameter.jpg" alt="Rolled stainless steel"></div>
+          <div class="gallery-item"><img src="assets/images/IMG_1171-scaled.jpeg" alt="Bending project"></div>
+          <div class="gallery-item"><img src="assets/images/skate-park-steel-800x600.jpeg" alt="Steel bending work"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Coil Bending Section -->
+    <div class="accordion-section" id="coil-bending">
+      <div class="accordion-header">
+        <h2 style="color: white; margin: 0;">Coil Bending</h2>
+        <span class="accordion-toggle">▼</span>
+      </div>
+      <div class="accordion-content">
+        <img src="assets/images/coil-bend.png" alt="Coil bending screenshot" style="max-width: 650px; width: 100%; display: block; margin: 1rem auto; border-radius: 4px;">
+        
+        <p style="margin-top: 1rem;">Custom coil bending for continuous curves and spiral geometries, as well as complex-curved coils. Typically used in industrial and chemical processing applications, automotive suspensions, and personal projects that need a gizmo or gadet.</p>
+
+      
+        <table>
+          <thead>
+            <tr>
+              <th>Capabilities</th>
+              <th>Specifications</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Profiles</strong></td>
+              <td>Round (hollow or solid), square tube, angle iron, solid bars, flat bars, channels, beams, plate</td>
+            </tr>
+            <tr>
+              <td><strong>Materials</strong></td>
+              <td>Stainless steel, mild steel, copper, brass, other workable metals</td>
+            </tr>
+            <tr>
+              <td><strong>Bend Radii</strong></td>
+              <td>Wide range depending on material and profile</td>
+            </tr>
+            <tr>
+              <td><strong>Coil Configurations</strong></td>
+              <td>Custom spirals, continuous curves, complex geometries</td>
+            </tr>
+            <tr>
+              <td><strong>Common Applications</strong></td>
+              <td>Gizmos & gadgets, cooktop burners, industrial/chemical processing equipment</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 style="color: var(--primary-brown); margin-top: 2rem;">Equipment Used</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Equipment Type</th>
+              <th>Description & Application</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Coil Bending Machine</strong></td>
+              <td>Specialized equipment with rotating mandrel or form. Material is fed and wrapped continuously to create spiral patterns. Pitch and diameter precisely controlled.</td>
+            </tr>
+            <tr>
+              <td><strong>Custom Forms & Mandrels</strong></td>
+              <td>Specialized tools designed for specific coil applications. Can be made to exact specifications for unique project requirements.</td>
+            </tr>
+            <tr>
+              <td><strong>Variable Speed Drive</strong></td>
+              <td>Allows precise control of winding speed and material feed rate, enabling consistent coil spacing and geometry.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div style="margin-top: 2rem; margin-bottom: 1rem;">
+          <a href="resources.html#coil-bending" style="display: inline-block; background-color: var(--off-black); color: white; padding: 0.75rem 2rem; text-decoration: none; border-radius: 4px; font-weight: bold; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='var(--orange)'" onmouseout="this.style.backgroundColor='var(--off-black)'">Learn More</a>
+        </div>
+
+          <h4 style="color: var(--primary-brown); margin-top: 2rem;">Project Gallery</h4>
+        <div class="gallery" style="margin-top: 1.5rem; margin-bottom: 1rem; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+          <div class="gallery-item"><img src="assets/images/Rolled_Stainless_tube_of_Varying_Diameter.jpg" alt="Rolled stainless steel"></div>
+          <div class="gallery-item"><img src="assets/images/IMG_1171-scaled.jpeg" alt="Bending project"></div>
+          <div class="gallery-item"><img src="assets/images/skate-park-steel-800x600.jpeg" alt="Steel bending work"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Specialty Components Section -->
+    <div class="accordion-section" id="specialty-components">
+      <div class="accordion-header">
+        <h2 style="color: white; margin: 0;">Specialty Components</h2>
+        <span class="accordion-toggle">▼</span>
+      </div>
+      <div class="accordion-content">
+        <img src="assets/images/complex.png" alt="Roll bending screenshot" style="max-width: 300px; width: 100%; display: block; margin: 1rem auto; border-radius: 4px;">
+        <p style="margin-top: 1rem;">One-off and low-run custom components for unique applications. Whether you need a single precision piece or a small batch of specialty components, we can design and manufacture exactly what you need.</p>
+        
+        
+       
+
+        <h4 style="color: var(--primary-brown); margin-top: 1.5rem;">What We Offer</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Service Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Custom Bends</strong></td>
+              <td>Single or small-batch custom bends in any profile, material, and radius your project requires</td>
+            </tr>
+            <tr>
+              <td><strong>Prototype Components</strong></td>
+              <td>First-article prototype pieces for equipment testing and validation</td>
+            </tr>
+            <tr>
+              <td><strong>Small Production Runs</strong></td>
+              <td>Short-run fabrication (5-100 pieces) without high setup costs</td>
+            </tr>
+            <tr>
+              <td><strong>Complex Geometries</strong></td>
+              <td>Unusual bends, multi-directional curves, and specialized designs</td>
+            </tr>
+            <tr>
+              <td><strong>Expert Consulting</strong></td>
+              <td>Work with our team to develop feasible solutions for challenging designs</td>
+            </tr>
+          </tbody>
+        </table>
+
+         <h4 style="color: var(--primary-brown); margin-top: 2rem;">Project Gallery</h4>
+        <div class="gallery" style="margin-top: 1.5rem; margin-bottom: 1rem; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+          <div class="gallery-item"><img src="assets/images/Rolled_Stainless_tube_of_Varying_Diameter.jpg" alt="Rolled stainless steel"></div>
+          <div class="gallery-item"><img src="assets/images/IMG_1171-scaled.jpeg" alt="Bending project"></div>
+          <div class="gallery-item"><img src="assets/images/skate-park-steel-800x600.jpeg" alt="Steel bending work"></div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+    <!-- Stocked Bends Section -->
+    <div class="accordion-section" id="stocked-bends">
+      <div class="accordion-header">
+        <h2 style="color: white; margin: 0;">Stocked Bends</h2>
+        <span class="accordion-toggle">▼</span>
+      </div>
+      <div class="accordion-content">
+        
+        <p style="margin-top: 1rem;">We maintain an inventory of standard bends, transition pieces, and pipeline stock that are ready to ship. Perfect for projects with quick timelines or for customers who need standardized or common bends.</p>
+
+        <h4 style="color: var(--primary-brown); margin-top: 1.5rem;">Stocked Transition Pieces</h4>
+        <p>We stock transition pieces (typically 1000mm long) in common sizes and thicknesses for expedited delivery. These custom-machined pieces serve as fittings and are available in standard configurations for quick turnaround projects.</p>
+
+        <h4 style="color: var(--primary-brown); margin-top: 1.5rem;">Material Stock</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Material</th>
+              <th>Profile</th>
+              <th>Stocked Lengths</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Carbon Steel</strong></td>
+              <td>TODO SIZE</td>
+              <td>TODO LENGTHS</td>
+            </tr>
+            <tr>
+              <td><strong>Stainless Steel</strong></td>
+              <td>TODO SIZE</td>
+              <td>TODO LENGTHS</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 style="color: var(--primary-brown); margin-top: 1.5rem;">Stocked Bends</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Material</th>
+              <th>Profile</th>
+              <th>Stocked Bend Radii</th>
+              <th>Stocked Lengths</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Carbon Steel</strong></td>
+              <td>Pipe, tube, angle iron TODO </td>
+              <td>TODO SIZE</td>
+              <td>TODO LENGTHS</td>
+            </tr>
+            <tr>
+              <td><strong>Stainless Steel</strong></td>
+              <td>Pipe, tube, bars - popular diameters</td>
+              <td>TODO SIZE</td>
+              <td>TODO LENGTHS</td>
+            </tr>
+            <tr>
+              <td><strong>Aluminum</strong></td>
+              <td>Tube, bar, channel - standard sizes</td>
+              <td>TODO SIZE</td>
+              <td>TODO LENGTHS</td>
+            </tr>
+            <tr>
+              <td><strong>Copper & Brass</strong></td>
+              <td>Tube and bar stock - selected sizes</td>
+              <td>TODO SIZE</td>
+              <td>TODO LENGTHS</td>
+            </tr>
+        
+
+
+
+
+          </tbody>
+        </table>
+           <h4 style="color: var(--primary-brown); margin-top: 2rem;">Stocked Bends Gallery</h4>
+        <div class="gallery" style="margin-top: 1.5rem; margin-bottom: 1rem; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+          <div class="gallery-item"><img src="assets/images/Rolled_Stainless_tube_of_Varying_Diameter.jpg" alt="Rolled stainless steel"></div>
+          <div class="gallery-item"><img src="assets/images/IMG_1171-scaled.jpeg" alt="Bending project"></div>
+          <div class="gallery-item"><img src="assets/images/skate-park-steel-800x600.jpeg" alt="Steel bending work"></div>
+        </div>
+
+        <p style="margin-top: 1.5rem; font-size: 0.95rem; color: #666;"><strong>Note:</strong> Contact us for current stock availability on specific sizes and materials. We regularly update our inventory based on customer demand.</p>
+      </div>
+    </div>
+
+    <!-- Fabrication & Finishing -->
+    <div class="accordion-section" id="fabrication-finishing">
+      <div class="accordion-header">
+        <h2 style="color: white; margin: 0;">Fabrication & Finishing</h2>
+        <span class="accordion-toggle">▼</span>
+      </div>
+      <div class="accordion-content">
+        
+        <p style="margin-top: 1rem;">Many customers want start-to-finish manufacturing for simplicity, saved costs, and efficient project completion! We offer a full-service fabrication and machine shop capabilities to complement bending services, so projects are ready for installation. We handle everything from simple cuts to complex assemblies.</p>
+        
+        <h4 style="color: var(--primary-brown); margin-top: 1.5rem;">Machine Shop Capabilities</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>CNC Machining</strong></td>
+              <td>Precision computer-controlled turning, milling, and drilling</td>
+            </tr>
+            <tr>
+              <td><strong>Turning</strong></td>
+              <td>Cylindrical work - facing, threading, profiling</td>
+            </tr>
+            <tr>
+              <td><strong>Welding</strong></td>
+              <td>MIG, TIG, and structural welding with full NDE/testing</td>
+            </tr>
+            <tr>
+              <td><strong>Grinding & Finishing</strong></td>
+              <td>Surface preparation, deburring, and finishing operations</td>
+            </tr>
+            <tr>
+              <td><strong>Drilling & Tapping</strong></td>
+              <td>Precision hole work with thread creation</td>
+            </tr>
+            <tr>
+              <td><strong>Cutting Services</strong></td>
+              <td>Plasma, oxy-fuel, and mechanical cutting</td>
+            </tr>
+          </tbody>
+        </table>
+
+         <h4 style="color: var(--primary-brown); margin-top: 1.5rem;">Custom Fabrication Services</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Description</th>
+              <th>Typical Applications</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Custom Assemblies</strong></td>
+              <td>In-house fabrication of complete assemblies to your specifications, ready for installation</td>
+              <td>Industrial chemical processing, Architectural structural assemblies, Davit arms</td>
+            </tr>
+            <tr>
+              <td><strong>Transitioned Ends</strong></td>
+              <td>Custom-machined transition pieces on pipe bends and short pieces of pipe to serve as fittings</td>
+              <td>Pipe connections, custom fittings, expedited assembly</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 style="color: var(--primary-brown); margin-top: 1.5rem;">Surface Finishing & Protective Coatings</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Description</th>
+              <th>Typical Applications</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Paint Application</strong></td>
+              <td>Custom paint finishing for protection and aesthetics</td>
+              <td>Industrial, architectural, and decorative applications</td>
+            </tr>
+            <tr>
+              <td><strong>Powder Coating</strong></td>
+              <td>Durable powder coating for enhanced finish and corrosion protection</td>
+              <td>Outdoor equipment, structural components, architectural elements</td>
+            </tr>
+            <tr>
+              <td><strong>Galvanizing</strong></td>
+              <td>Hot-dip galvanizing for superior corrosion protection and long-term durability</td>
+              <td>Infrastructure, outdoor structures, long-term durability requirements</td>
+            </tr>
+            <tr>
+              <td><strong>Coatings & Insulation</strong></td>
+              <td>Specialized coatings and insulation systems for thermal and corrosion protection (see Coatings & Insulation section)</td>
+              <td>Temperature-sensitive applications, pipeline systems, specialized environments</td>
+            </tr>
+          </tbody>
+        </table>
+    
+        <h4 style="color: var(--primary-brown); margin-top: 2rem;">Project Gallery</h4>
+        <div class="gallery" style="margin-top: 1.5rem; margin-bottom: 1rem; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+          <div class="gallery-item"><img src="assets/images/Rolled_Stainless_tube_of_Varying_Diameter.jpg" alt="Rolled stainless steel"></div>
+          <div class="gallery-item"><img src="assets/images/IMG_1171-scaled.jpeg" alt="Bending project"></div>
+          <div class="gallery-item"><img src="assets/images/skate-park-steel-800x600.jpeg" alt="Steel bending work"></div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Coating & Insulation Section -->
+     <div class="accordion-section" id="coatings-insulation">
+      <div class="accordion-header">
+        <h2 style="color: white; margin: 0;">Coatings & Insulation</h2>
+        <span class="accordion-toggle">▼</span>
+      </div>
+      <div class="accordion-content">
+        <img src="assets/images/coatings.png" alt="Roll bending screenshot" style="max-width: 500px; width: 100%; display: block; margin: 1rem auto; border-radius: 4px;">
+        <p style="margin-top: 1rem;"> Some projects require coatings and/or insulation to meet project requirements and acquire certifications. Compass Bending stocks pipe with common coatings and insulation, and has extensive experience with quality assurance, patching, and certifications.</p>
+        
+        <h4 style="color: var(--primary-brown); margin-top: 1.5rem;">Epoxy Coatings</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Manufacturer</th>
+              <th>Max Service Temperature</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Protal 7200</strong> (Preferred)</td>
+              <td>Denso</td>
+              <td>85°C / 185°F</td>
+            </tr>
+            <tr>
+              <td><strong>Scotchkote 134</strong></td>
+              <td>3M</td>
+              <td>113°C / 235°F</td>
+            </tr>
+            <tr>
+              <td><strong>Protal 7900</strong></td>
+              <td>Denso</td>
+              <td>121°C / 250°F</td>
+            </tr>
+            <tr>
+              <td><strong>Devchem 253</strong> (Internal)</td>
+              <td>Devoe</td>
+              <td>149°C / 300°F</td>
+            </tr>
+            <tr>
+              <td><strong>Enviroline 415</strong> (Internal)</td>
+              <td>Enviroline</td>
+              <td>149°C / 300°F</td>
+            </tr>
+            <tr>
+              <td><strong>Novolac R-200</strong></td>
+              <td>Novocoat</td>
+              <td>100°C / 212°F</td>
+            </tr>
+            <tr>
+              <td><strong>SC2200</strong></td>
+              <td>Novocoat</td>
+              <td>200°C / 392°F</td>
+            </tr>
+            <tr>
+              <td><strong>SP 2888RG</strong></td>
+              <td>SPC</td>
+              <td>80°C / 176°F</td>
+            </tr>
+            <tr>
+              <td><strong>SP 3888</strong></td>
+              <td>SPC</td>
+              <td>95°C / 203°F</td>
+            </tr>
+            <tr>
+              <td><strong>SP 8888</strong></td>
+              <td>SPC</td>
+              <td>150°C / 302°F</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 style="color: var(--primary-brown); margin-top: 1.5rem;">Tape Wrap Options</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Manufacturer</th>
+              <th>Max Service Temperature</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>RenWrap 330</strong> (Preferred)</td>
+              <td>Renfrew</td>
+              <td>85°C / 185°F</td>
+            </tr>
+            <tr>
+              <td><strong>Polyken 900</strong></td>
+              <td>Polyken</td>
+              <td>66°C / 150°F</td>
+            </tr>
+            <tr>
+              <td><strong>Polyken 934</strong></td>
+              <td>Polyken</td>
+              <td>66°C / 150°F</td>
+            </tr>
+            <tr>
+              <td><strong>RenWrap 300</strong></td>
+              <td>Renfrew</td>
+              <td>71°C / 160°F</td>
+            </tr>
+            <tr>
+              <td><strong>Stopaq CZHT / HTPP System</strong></td>
+              <td>Stopaq</td>
+              <td>95°C / 203°F</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 style="color: var(--primary-brown); margin-top: 1.5rem;">Shrink Sleeves</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Manufacturer</th>
+              <th>Max Service Temperature</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>K-60</strong></td>
+              <td>Canusa</td>
+              <td>60°C / 140°F</td>
+            </tr>
+            <tr>
+              <td><strong>GTS-PE</strong></td>
+              <td>Canusa</td>
+              <td>100°C / 212°F</td>
+            </tr>
+            <tr>
+              <td><strong>WPCT</strong></td>
+              <td>Raychem</td>
+              <td>86°C / 187°F</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 style="color: var(--primary-brown); margin-top: 1.5rem;">Polyethylene Coatings (Yellow Jacket & Ultrabond)</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Manufacturer</th>
+              <th>Max Service Temperature</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Ultrabond RA (UBRA)</strong></td>
+              <td>Perma-Pipe</td>
+              <td>60°C / 140°F</td>
+            </tr>
+            <tr>
+              <td><strong>YJ ("YJ1")</strong></td>
+              <td>Shaw</td>
+              <td>60°C / 140°F</td>
+            </tr>
+            <tr>
+              <td><strong>YJ2K</strong></td>
+              <td>Shaw</td>
+              <td>85°C / 185°F</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 style="color: var(--primary-brown); margin-top: 1.5rem;">Insulation Services</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Insulation Type</th>
+              <th>Description</th>
+              <th>Outer Layer Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Polyurethane Foam Half-Shells</strong></td>
+              <td>Standard and custom thicknesses available. Available with heat trace channel.</td>
+              <td>Tape, shrink sleeves, polyurea spray (over YJ, UBRA, tape, or epoxy)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 style="color: var(--primary-brown); margin-top: 1.5rem;">Coating Processes and Quality</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Process</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Surface Preparation</strong></td>
+              <td>Sandblasting to SSPC-SP6 or SSPC-SP10 depending on coating requirements</td>
+           
+            <tr>
+              <td><strong>Primer Application</strong></td>
+              <td>Appropriate primers applied as required (e.g., prior to tape wrap)</td>
+            </tr>
+            <tr>
+              <td><strong>Patching & Testing</strong></td>
+              <td>All coated bends are patched if necessary and holiday tested before shipping</td>
+            <tr>
+              <td><strong>Portable Patch Kits</strong></td>
+              <td>K60 shrink sleeves for YJ1 and UBRA; GTS-PE shrink sleeves for YJ2K and UB IIISE; Stopaq wrapping also available</td>
+            </tr>
+            <tr>
+              <td><strong>Documentation & Specifications</strong></td>
+              <td>Coating manufacturers' spec sheets, installation guides, and MSDS sheets on file</td>
+            <tr>
+              <td><strong>Quality Reports & Certifications</strong></td>
+              <td>All coatings come with quality assurance inspection reports</td>
+            </tr>
+             
+            </tr>
+          </tbody>
+        </table>
+
+
+        <p style="margin-top: 1.5rem; padding: 1rem; background-color: var(--light-gray); border-radius: 4px;"><strong>Note:</strong> Perma-Pipe Ultrabond IIISE (UB IIISE) coated bends are available by special request with a waiver only.</p>
+      </div>
+    </div>
+
+    <!-- Certifications & Quality Assurance -->
+    <!-- Certifications Section -->
+    <div class="accordion-section" id="certifications">
+      <div class="accordion-header">
+        <h2 style="color: white; margin: 0;">Certifications</h2>
+        <span class="accordion-toggle">▼</span>
+      </div>
+      <div class="accordion-content">
+        <img src="assets/images/mtr.png" alt="Roll bending screenshot" style="max-width: 300px; width: 100%; display: block; margin: 1rem auto; border-radius: 4px;">
+        <p style="margin-top: 1rem;">Compass Bending operates under recognized industry standards and certifications that ensure quality, safety, and compliance for every project.</p>
+        
+        <h4 style="color: var(--primary-brown); margin-top: 1.5rem;">Applicable Standards & Codes</h4>
+        <p>Compass Bending conforms to all applicable codes and standards, including CSA, ASME/ASTM, API, and PFI. We also adhere to customer-specific procedures and specifications for code work.</p>
+
+        <h4 style="color: var(--primary-brown); margin-top: 1.5rem;">Standards & Organizations</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Standard/Organization</th>
+              <th>Description</th>
+              <th>Applicable Codes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>CSA (Canadian Standards Association)</strong></td>
+              <td>Canadian pipeline, pressure system, and structural standards</td>
+              <td>(PLACEHOLDER) Z662, Z245.17, Z245.16, Z245.11, S6, S16, A82.1</td>
+            </tr>
+            <tr>
+              <td><strong>ASME/ASTM</strong></td>
+              <td>American Society of Mechanical Engineers and materials standards</td>
+              <td>(PLACEHOLDER) B16.9, B31.1, B31.3, B31.4, B31.8, Section VIII, Material specifications</td>
+            </tr>
+            <tr>
+              <td><strong>API</strong></td>
+              <td>American Petroleum Institute standards for oil and gas</td>
+              <td>(PLACEHOLDER) API 579, API 610, API 650</td>
+            </tr>
+            <tr>
+              <td><strong>PFI</strong></td>
+              <td>Pipe Fabrication Institute welded fittings standards</td>
+              <td>(PLACEHOLDER) PFI ES-20</td>
+            </tr>
+            <tr>
+              <td><strong>ABSA</strong></td>
+              <td>Alberta Boiler Safety Association standards for fabricated components</td>
+              <td>(PLACEHOLDER) ABSA Rules</td>
+            </tr>
+            <tr>
+              <td><strong>Customer Specifications</strong></td>
+              <td>Custom client procedures and specifications at request</td>
+              <td>(PLACEHOLDER) Per customer requirements</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Quality Assurance Section -->
+    <div class="accordion-section" id="quality-assurance">
+      <div class="accordion-header">
+        <h2 style="color: white; margin: 0;">Quality Assurance</h2>
+        <span class="accordion-toggle">▼</span>
+      </div>
+      <div class="accordion-content">
+        <p style="margin-top: 1rem;">We work hard at being transparent and accountable. Every project is backed by rigorous quality standards, comprehensive testing, and detailed documentation. All work is overseen by a dedicated Project Manager and Quality Assurance (QA) staff.</p>
+
+        <h4 style="color: var(--primary-brown); margin-top: 1.5rem;">Testing & Examination</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Testing Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Destructive Testing</strong></td>
+              <td>Performed for code work and critical applications as required by applicable standards</td>
+            </tr>
+            <tr>
+              <td><strong>Non-Destructive Examination (NDE)</strong></td>
+              <td>Comprehensive examination as required by applicable codes</td>
+            </tr>
+            <tr>
+              <td><strong>Holiday Testing</strong></td>
+              <td>Electrical continuity testing for all coated components to verify coating integrity</td>
+            </tr>
+            <tr>
+              <td><strong>Dry Film Thickness (DFT)</strong></td>
+              <td>Coating thickness measurements and verification to ensure specification compliance</td>
+            </tr>
+            <tr>
+              <td><strong>Blast Profile Examination</strong></td>
+              <td>Surface preparation quality verification before coating application</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 style="color: var(--primary-brown); margin-top: 1.5rem;">Documentation & Records</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Documentation Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Mill Test Reports (MTRs)</strong></td>
+              <td>Large database maintained on all pipe, process tube, and structural materials. Shipped with completed projects and designated customer representatives</td>
+            </tr>
+            <tr>
+              <td><strong>Project Reports</strong></td>
+              <td>Comprehensive reports issued upon project completion with all testing and QA results</td>
+            </tr>
+            <tr>
+              <td><strong>Quality Assurance Records</strong></td>
+              <td>All project and QA records maintained indefinitely for traceability and accountability</td>
+            </tr>
+            <tr>
+              <td><strong>Non-Conformance Reports (NCRs)</strong></td>
+              <td>Filed to address any issues with materials, suppliers, processes, or shipping. Document problems, solutions, and corrective actions</td>
+            </tr>
+            <tr>
+              <td><strong>Quality Manual</strong></td>
+              <td>Comprehensive in-house Quality Manual maintained for all non-code work</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 style="color: var(--primary-brown); margin-top: 1.5rem;">Oversight & Accountability</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Oversight Function</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Project Manager</strong></td>
+              <td>Dedicated project manager oversees every project from start to finish</td>
+            </tr>
+            <tr>
+              <td><strong>QA Staff</strong></td>
+              <td>Quality Assurance staff monitor all aspects of production, testing, and documentation</td>
+            </tr>
+            <tr>
+              <td><strong>Third-Party Inspections</strong></td>
+              <td>We welcome third-party inspectors to review work in process or upon completion</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 style="color: var(--primary-brown); margin-top: 1.5rem;">Production Quality</h4>
+        <p>We produce thousands of bends each year while maintaining consistent quality through modern equipment designed and built to our specifications. Post-bend heat treatment is available for specific materials and applications when required.</p>
+      </div>
+    </div>
+
+    <!-- Shipping Section -->
+    <div class="accordion-section" id="shipping">
+      <div class="accordion-header">
+        <h2 style="color: white; margin: 0;">Shipping</h2>
+        <span class="accordion-toggle">▼</span>
+      </div>
+      <div class="accordion-content">
+        <img src="assets/images/shipping.png" alt="Shipping services" style="max-width: 650px; width: 100%; display: block; margin: 1rem auto; border-radius: 4px;">
+        <p style="margin-top: 1rem;">We manage all shipping, regardless of the product and its destination. We can arrange material pickup from anywhere – local, domestic, or international – and bring it to us for processing, with the assistance of our customs brokers and shipping department.</p>
+
+        <h4 style="color: var(--primary-brown); margin-top: 1.5rem;">Our Fleet</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Equipment</th>
+              <th>Description</th>
+              <th>Use Cases</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Gooseneck Trailers</strong></td>
+              <td>Our own fleet for immediate availability</td>
+              <td>Hotshot services, time-sensitive deliveries</td>
+            </tr>
+            <tr>
+              <td><strong>Peterbilt 53-Foot High-Boy Trailer</strong></td>
+              <td>Tall/oversized item capability</td>
+              <td>Large-scale bends, tall/oversized products</td>
+            </tr>
+            <tr>
+              <td><strong>Dependable Carriers & Contractors</strong></td>
+              <td>Network of reliable partners</td>
+              <td>FTL and LTL shipments on decks and in vans</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 style="color: var(--primary-brown); margin-top: 1.5rem;">Shipping Services</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Service Type</th>
+              <th>Description</th>
+              <th>Availability</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Full Truck Load (FTL)</strong></td>
+              <td>Dedicated truck shipments on decks and in vans</td>
+              <td>Local, domestic, and international</td>
+            </tr>
+            <tr>
+              <td><strong>Less Than Truck Load (LTL)</strong></td>
+              <td>Flexible options for smaller shipments</td>
+              <td>Local, domestic, and international</td>
+            </tr>
+            <tr>
+              <td><strong>Hotshot Services</strong></td>
+              <td>Time-sensitive deliveries with our gooseneck trailers</td>
+              <td>Rapid response available</td>
+            </tr>
+            <tr>
+              <td><strong>Oversized/Wide Loads</strong></td>
+              <td>Special handling for large items with our equipment and expertise</td>
+              <td>Alberta destinations</td>
+            </tr>
+            <tr>
+              <td><strong>Pilot Car Services</strong></td>
+              <td>Escort vehicles for loads requiring specialized transport</td>
+              <td>Available as needed</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 style="color: var(--primary-brown); margin-top: 1.5rem;">Payment & Arrangement Options</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Shipping Method</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Collect on Your Trucks</strong></td>
+              <td>Pick up shipments using your own transportation</td>
+            </tr>
+            <tr>
+              <td><strong>Appointed Carriers</strong></td>
+              <td>Arrange shipment through your designated carriers</td>
+            </tr>
+            <tr>
+              <td><strong>Prepaid & Charged (PP&C)</strong></td>
+              <td>We arrange and prepay shipping, charged to your account</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 style="color: var(--primary-brown); margin-top: 1.5rem;">International Capabilities</h4>
+        <p>With the assistance of our customs brokers and shipping department, we can handle material pickup and shipment from anywhere in the world. We manage all customs and regulatory requirements to deliver processed materials to your desired destination.</p>
+
+        <h4 style="color: var(--primary-brown); margin-top: 1.5rem;">Booking & Operating Hours</h4>
+        <p><strong>Office Hours:</strong> Monday–Friday, 8:00am–5:00pm</p>
+        <p><strong>Shipping Department:</strong> Monday–Friday, 8:00am–3:00pm (subject to change)</p>
+        <p><strong>Note:</strong> Advance booking for loading/unloading is requested due to yard capacity.</p>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+
+  <section>
+      <h2>Let's Get Started</h2>
+      <div class="contact-section">
+
+        <div class="contact-box">
+          <h3>Contact Us</h3>
+          <form>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="text" name="phone" placeholder="Phone Number">
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <input type="file" name="attachment" accept=".pdf,.doc,.docx,.dwg,.zip,.jpg,.jpeg,.png">
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+
+        <div class="contact-box">
+          <p>Business hours: 8:00 AM - 4:00 PM MST <br>Monday-Friday</p>
+          <h3 class="mt-1-5">Give us a call:</h3>
+          <p>Yes, we answer our phones!</p>
+          <p class="mt-0-5 mb-0-5" style="font-size: 1rem;">1 (403) 279-6615</p>
+          <p class="mb-0-5" style="font-size: 1rem;">1 (800) 708-7453</p>
+
+          <h3 class="mt-1-5">Drop by:</h3>
+          <p>7320 30 Street S.E. Calgary, Alberta Canada T2C 1W2</p>
+
+          <h3 class="mt-1-5">Or send us an email:</h3>
+          <p>info@compassbending.com</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+  </div><!-- closing capabilities-wrapper -->
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="capabilities.html">Capabilities</a></li>
+          <li><a href="applications.html">Applications</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Latest Blog Post</h3>
+        <div class="blog-post">
+          <h4>The Misconceptions of Hot Bends</h4>
+          <p>More often than really, a customer will reach out inquiring about a hot bending process.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Section Navigation
+    const sections = document.querySelectorAll('.accordion-section');
+    const tocLinks = document.querySelectorAll('.toc-sidebar a');
+
+    // Show a specific section
+    function showSection(sectionId) {
+      // Hide all sections
+      sections.forEach(section => section.classList.remove('active'));
+      
+      // Show the target section
+      const targetSection = document.getElementById(sectionId);
+      if (targetSection) {
+        targetSection.classList.add('active');
+      }
+      
+      // Update active TOC link
+      tocLinks.forEach(link => link.classList.remove('active'));
+      const activeLink = document.querySelector(`.toc-sidebar a[href="#${sectionId}"]`);
+      if (activeLink) {
+        activeLink.classList.add('active');
+      }
+    }
+
+    // TOC link click handlers
+    tocLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const sectionId = link.getAttribute('href').substring(1);
+        showSection(sectionId);
+      });
+    });
+
+    // Show Roll Bending by default
+    showSection('roll-bending');
+  </script>
+</body>
+</html>
