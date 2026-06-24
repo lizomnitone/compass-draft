@@ -43,7 +43,7 @@
   <header>
     <div class="header-content">
       <a href="index.html" class="logo">
-        <img src="assets/images/logoblack.png" alt="Compass Bending Logo">
+        <img src="assets/images/compass-logo.png" alt="Compass Bending Logo">
       </a>
       <nav>
         <ul class="main-menu">
@@ -65,6 +65,10 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
+    <div class="search-container">
+      <input type="text" id="searchInput" class="search-input" placeholder="Search...">
+      <div id="searchResults" class="search-results"></div>
+    </div>
     </div>
   </header>
 
@@ -87,22 +91,31 @@
     <!-- Why Join Us Section -->
     <section>
       <h2>Why Join Compass Bending?</h2>
+      <p>We're guided by core values that shape our culture and how we work together every day:</p>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
         <div>
-          <h3>Meaningful Work</h3>
-          <p>Work on projects that matter—from infrastructure to innovation. Your skills make a real impact on our customers' success.</p>
+          <h3>Integrity & Honesty</h3>
+          <p>We do what we say we'll do. Work in an environment where trust, honesty, and straightforward communication are the foundation of everything we do.</p>
         </div>
         <div>
-          <h3>Team & Culture</h3>
-          <p>Join a supportive, collaborative team of over 30 experienced professionals who value integrity, continuous learning, and hands-on problem solving.</p>
+          <h3>Safety</h3>
+          <p>Your wellbeing matters. We prioritize a safe workplace where every team member goes home healthy every day.</p>
         </div>
         <div>
-          <h3>Growth Opportunities</h3>
-          <p>We invest in our team. You'll have opportunities to develop new skills, take on greater responsibility, and advance your career.</p>
+          <h3>Teamwork & Collaboration</h3>
+          <p>We succeed together. You'll work with experienced professionals who support each other, share knowledge, and solve problems as one team.</p>
         </div>
         <div>
-          <h3>Competitive Benefits</h3>
-          <p>Enjoy competitive compensation, flexible work arrangements, and a workplace that values your contributions.</p>
+          <h3>Accountability</h3>
+          <p>Own your work and your growth. We trust our team members to take responsibility, learn from experience, and continuously improve.</p>
+        </div>
+        <div>
+          <h3>Customer Focus</h3>
+          <p>Every project matters. Your work directly impacts our customers' success, and we take pride in delivering exceptional results.</p>
+        </div>
+        <div>
+          <h3>Kaizen (Continuous Improvement)</h3>
+          <p>We're always learning and evolving. Join a culture where innovation, growth, and getting better every day are celebrated.</p>
         </div>
       </div>
     </section>
@@ -195,7 +208,8 @@
           <form>
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
-            <input type="text" name="phone" placeholder="Phone Number">
+            <input type="text" name="phone" placeholder="Phone Number (Optional)">
+            <input type="text" name="company" placeholder="Company (Optional)">
             <textarea name="message" placeholder="Tell us about yourself..." required></textarea>
             <input type="file" name="attachment" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
             <input type="submit" value="Submit">

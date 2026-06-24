@@ -200,7 +200,7 @@
   <header>
     <div class="header-content">
       <a href="index.html" class="logo">
-        <img src="assets/images/logoblack.png" alt="Compass Bending Logo">
+        <img src="assets/images/compass-logo.png" alt="Compass Bending Logo">
       </a>
       <nav>
         <ul class="main-menu">
@@ -222,6 +222,10 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
+    <div class="search-container">
+      <input type="text" id="searchInput" class="search-input" placeholder="Search...">
+      <div id="searchResults" class="search-results"></div>
+    </div>
     </div>
   </header>
 
@@ -238,8 +242,8 @@
     <div class="toc-sidebar">
       <ul>
         <li><a href="#faqs">FAQs</a></li>
-        <li><a href="#reference-materials">Reference Materials</a></li>
-        <li><a href="#documents">Documents</a></li>
+        <li><a href="#technical-specs">Technical Specs</a></li>
+        <li><a href="#visual-references">Visual References</a></li>
         <li><a href="#glossary">Glossary</a></li>
       </ul>
     </div>
@@ -277,54 +281,413 @@
         </div>
       </div>
 
-      <!-- Reference Materials Section -->
-      <div class="accordion-section" id="reference-materials">
+      <!-- Technical Specifications Section -->
+      <div class="accordion-section" id="technical-specs">
         <div class="accordion-header">
-          <h2 style="color: white; margin: 0;">Reference Materials</h2>
+          <h2 style="color: white; margin: 0;">Technical Specifications</h2>
           <span class="accordion-toggle">▼</span>
         </div>
         <div class="accordion-content">
+          <p>Comprehensive technical reference for Compass Bending capabilities, including pipe sizes, bend radii, delivery timelines, and material specifications.</p>
 
-          <h3 style="color: var(--primary-brown); margin-top: 1.5rem;">Helpful Documents</h3>
-          <p>Download technical PDFs covering pipe bending fundamentals, tooling, and best practices.</p>
+          <h3 style="color: var(--primary-brown); margin-top: 1.5rem;">Pipe Size Range</h3>
+          <p>We work with pipe sizes from 2" to 16" standard, with larger sizes up to 66" available by subcontract.</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Nominal Size</th>
+                <th>Outside Diameter (inches)</th>
+                <th>Outside Diameter (mm)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2"</td>
+                <td>2.375" (2-3/8")</td>
+                <td>60.3 mm</td>
+              </tr>
+              <tr>
+                <td>3"</td>
+                <td>3.5" (3-1/2")</td>
+                <td>88.9 mm</td>
+              </tr>
+              <tr>
+                <td>4"</td>
+                <td>4.5" (4-1/2")</td>
+                <td>114.3 mm</td>
+              </tr>
+              <tr>
+                <td>6"</td>
+                <td>6.625" (6-5/8")</td>
+                <td>168.3 mm</td>
+              </tr>
+              <tr>
+                <td>8"</td>
+                <td>8.625" (8-5/8")</td>
+                <td>219.1 mm</td>
+              </tr>
+              <tr>
+                <td>10"</td>
+                <td>10.75" (10-3/4")</td>
+                <td>273.1 mm</td>
+              </tr>
+              <tr>
+                <td>12"</td>
+                <td>12.75" (12-3/4")</td>
+                <td>323.8 mm</td>
+              </tr>
+              <tr>
+                <td>16"</td>
+                <td>16.0" (16")</td>
+                <td>406.4 mm</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 style="color: var(--primary-brown); margin-top: 2rem;">Pipe Lengths</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>SRL (Single Random Length)</strong></td>
+                <td>Seamless pipe approximately 20' long, varying from 17' to 24' (±) - hence "random" length</td>
+              </tr>
+              <tr>
+                <td><strong>DRL (Double Random Length)</strong></td>
+                <td>Seamless pipe approximately 40' long (±), roughly double the length of SRL, varying from 37' to 44' (±)</td>
+              </tr>
+              <tr>
+                <td><strong>TRL (Triple Random Length)</strong></td>
+                <td>Welded/ERW pipe approximately 60' random lengths, varying by manufacturer from 55' to 65'</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="margin-top: 0.75rem; font-size: 0.9rem; color: #666;"><strong>Note:</strong> Seamless pipe is seldom available in any length other than singles (SRL) and doubles (DRL). CSA grades of welded pipe (ERW - electric resistance welded) are usually available only as triple random lengths (TRL).</p>
+
+          <h3 style="color: var(--primary-brown); margin-top: 2rem;">Bend Radius Specifications</h3>
+          <p><strong>Note:</strong> D represents the nominal diameter. Radius is measured to the centre line of the pipe. For example: 4" diameter at 20D = 4" x 20 = 80" centerline radius = 2032 mm. Standard oil patch radius is typically 20D.</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Radius Type</th>
+                <th>Description & Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>15D</strong></td>
+                <td>Nominal diameter multiplied by 15 (e.g., 3" ø 15D = 3 x 15 = 45" radius = 1143 mm)</td>
+              </tr>
+              <tr>
+                <td><strong>20D</strong></td>
+                <td>Nominal diameter multiplied by 20 (e.g., 4" ø 20D = 4 x 20 = 80" radius = 2032 mm) - standard oil industry radius</td>
+              </tr>
+              <tr>
+                <td><strong>50D</strong></td>
+                <td>Nominal diameter multiplied by 50 (e.g., 4" ø 50D = 4 x 50 = 200" radius)</td>
+              </tr>
+              <tr>
+                <td><strong>Elbows (3D, 5D, etc.)</strong></td>
+                <td>Long-radius and tight-radius elbows available in various standard configurations</td>
+              </tr>
+              <tr>
+                <td><strong>Metric or Imperial Measurements</strong></td>
+                <td>Radius may also be specified directly in measurement (e.g., 5'-0" radius)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 style="color: var(--primary-brown); margin-top: 2rem;">Delivery Timeline</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Job Type</th>
+                <th>Typical Delivery</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Small Quantities</strong></td>
+                <td>1 to 3 days</td>
+              </tr>
+              <tr>
+                <td><strong>Large Jobs</strong></td>
+                <td>3 days to 2 weeks (depending on size, quantities, material, and complexity)</td>
+              </tr>
+              <tr>
+                <td><strong>Rush Jobs</strong></td>
+                <td>Same day if necessary (subject to availability; some standard bends kept in stock)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 style="color: var(--primary-brown); margin-top: 2rem;">Common Wall Thicknesses</h3>
+          <p>Standard wall thicknesses for welded pipe used in bending applications:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Inches</th>
+                <th>Millimeters</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>0.125"</td>
+                <td>3.2 mm</td>
+              </tr>
+              <tr>
+                <td>0.154"</td>
+                <td>3.9 mm</td>
+              </tr>
+              <tr>
+                <td>0.156"</td>
+                <td>4.0 mm</td>
+              </tr>
+              <tr>
+                <td>0.188"</td>
+                <td>4.8 mm</td>
+              </tr>
+              <tr>
+                <td>0.216"</td>
+                <td>5.5 mm</td>
+              </tr>
+              <tr>
+                <td>0.219"</td>
+                <td>5.6 mm</td>
+              </tr>
+              <tr>
+                <td>0.237"</td>
+                <td>6.0 mm</td>
+              </tr>
+              <tr>
+                <td>0.250"</td>
+                <td>6.4 mm</td>
+              </tr>
+              <tr>
+                <td>0.277"</td>
+                <td>7.0 mm</td>
+              </tr>
+              <tr>
+                <td>0.280"</td>
+                <td>7.1 mm</td>
+              </tr>
+              <tr>
+                <td>0.322"</td>
+                <td>8.2 mm</td>
+              </tr>
+              <tr>
+                <td>0.365"</td>
+                <td>9.3 mm</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 style="color: var(--primary-brown); margin-top: 1.5rem;">Pipe Schedule Designations</h4>
+          <p><strong>Schedule (Sch):</strong> Standard thickness classifications such as Schedule 40, Schedule 80, etc. Thickness varies by pipe size according to industry tables.</p>
+          <p><strong>XH (Extra Heavy) / XXH (Double Extra Heavy):</strong> Also referred to as XS (Extra Strong) and XXS (Double Extra Strong). Thickness varies by pipe size according to standard tables. These designations are typically used only for standard pipe sizes (A53B, A106B, A333-6).</p>
+
+          <h3 style="color: var(--primary-brown); margin-top: 2rem;">Pipe Grades & Specifications</h3>
+
+          <h4 style="color: var(--primary-brown); margin-top: 1rem;">ASTM / ASME Standards</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>Grade</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>ASTM A53B / ASME SA53B</strong></td>
+                <td>Structural/water grade pipe, usually welded. General purpose applications.</td>
+              </tr>
+              <tr>
+                <td><strong>ASTM A106B / ASME SA106B</strong></td>
+                <td>Seamless pipe for regular and high temperature service applications</td>
+              </tr>
+              <tr>
+                <td><strong>ASTM A333-6 / ASME SA333-6</strong></td>
+                <td>Seamless pipe for low temperature service (-45°C / -49°F)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 style="color: var(--primary-brown); margin-top: 1.5rem;">CSA Z245.1 Standards (Canadian)</h4>
+          <p>Available in both welded and seamless pipe configurations.</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Grade/Category</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Grades: Gr241, Gr290, Gr359, Gr386, Gr414</strong></td>
+                <td>Graded for different minimum yield strengths; can be used for various applications</td>
+              </tr>
+              <tr>
+                <td><strong>Cat1 (Category 1)</strong></td>
+                <td>Regular and high temperature service pipe</td>
+              </tr>
+              <tr>
+                <td><strong>Cat2 (Category 2)</strong></td>
+                <td>Low temperature service pipe at specified temperatures: -18°C, -28°C, -45°C</td>
+              </tr>
+              <tr>
+                <td><strong>Sour Service (SS)</strong></td>
+                <td>For sour gas and fluids with hydrogen sulfide content. May also be designated SSS for Super Sour Service.</td>
+              </tr>
+              <tr>
+                <td><strong>Sweet Service</strong></td>
+                <td>Non-sour service applications (does not require sour service material specifications)</td>
+              </tr>
+              <tr>
+                <td><strong>Gr359 Cat2 (-45°C)</strong></td>
+                <td>Stocked for all grades equal or less. Suitable for sour service in low-temperature applications.</td>
+              </tr>
+              <tr>
+                <td><strong>Higher Grades (Gr414, Gr448, HIC)</strong></td>
+                <td>Available on request. HIC-resistant material for high sulfur content environments.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 style="color: var(--primary-brown); margin-top: 2rem;">Minimum Wall Thickness for 20D Bending</h3>
+          <p>The following table shows minimum wall thickness requirements for bending at 20D radius:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Pipe Diameter</th>
+                <th>Min Wall (Inches)</th>
+                <th>Min Wall (Millimeters)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2"</td>
+                <td>0.125"</td>
+                <td>3.2 mm</td>
+              </tr>
+              <tr>
+                <td>3"</td>
+                <td>0.125"</td>
+                <td>3.2 mm</td>
+              </tr>
+              <tr>
+                <td>4"</td>
+                <td>0.156"</td>
+                <td>4.0 mm</td>
+              </tr>
+              <tr>
+                <td>6"</td>
+                <td>0.188"</td>
+                <td>4.8 mm</td>
+              </tr>
+              <tr>
+                <td>8"</td>
+                <td>0.219"</td>
+                <td>5.6 mm</td>
+              </tr>
+              <tr>
+                <td>10"</td>
+                <td>0.250"</td>
+                <td>6.4 mm</td>
+              </tr>
+              <tr>
+                <td>12"</td>
+                <td>0.281"</td>
+                <td>7.1 mm</td>
+              </tr>
+              <tr>
+                <td>16"</td>
+                <td>0.375"</td>
+                <td>9.5 mm</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 style="color: var(--primary-brown); margin-top: 2rem;">Coated Pipe Bending</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Capability</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Pre-Coated Pipe Bending</strong></td>
+                <td>We can bend YJ1 and YJ2K coated pipe at 20D and larger radii without damage to the coating</td>
+              </tr>
+              <tr>
+                <td><strong>Post-Bend Coating</strong></td>
+                <td>After bending, we can apply various coatings: YJ equivalent (tape wrap, shrink sleeves), insulation, epoxy, FBE (fusion bond epoxy), and other protective finishes</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 style="color: var(--primary-brown); margin-top: 2rem;">Inspection & Standards</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Standard</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Non-Destructive Testing (NDT)</strong></td>
+                <td>All work performed with NDE (non-destructive examination) as per CSA codes Z245.11 and Z662</td>
+              </tr>
+              <tr>
+                <td><strong>Destructive Testing</strong></td>
+                <td>Performed on each heat as per code and customer specifications</td>
+              </tr>
+              <tr>
+                <td><strong>Project Reports</strong></td>
+                <td>All jobs include comprehensive project documentation and testing reports</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+      <!-- Visual References Section -->
+      <div class="accordion-section" id="visual-references">
+        <div class="accordion-header">
+          <h2 style="color: white; margin: 0;">Visual References</h2>
+          <span class="accordion-toggle">▼</span>
+        </div>
+        <div class="accordion-content">
+          <p>Visual guides and illustrations to help understand bending techniques, profile orientations, and best practices for different bending methods.</p>
+
+          <h3 style="color: var(--primary-brown); margin-top: 1.5rem;">Profile Orientation Guides</h3>
+          <p>Understand the "hard way" vs. "easy way" of bending different profiles, and how orientation affects bending characteristics.</p>
           <ul class="resource-list">
-            <li><a href="#">PLACEHOLDER: Pipe Bending Fundamentals Guide (PDF)</a></li>
-            <li><a href="#">PLACEHOLDER: Roll Bending Techniques Overview (PDF)</a></li>
-            <li><a href="#">PLACEHOLDER: Tube vs Pipe Bending Comparison (PDF)</a></li>
-            <li><a href="#">PLACEHOLDER: Common Defects & How to Avoid Them (PDF)</a></li>
-            <li><a href="#">PLACEBOLDER: Tooling Setup & Best Practices (PDF)</a></li>
+            <li><a href="#">PLACEHOLDER: Angle Iron Bending — Hard Way vs. Easy Way (Visual Guide)</a></li>
+            <li><a href="#">PLACEHOLDER: Leg In / Leg Out / Heel Orientations (Visual Guide)</a></li>
+            <li><a href="#">PLACEHOLDER: Rectangular Tube Bending Orientations (Visual Guide)</a></li>
+            <li><a href="#">PLACEHOLDER: Flat Bar Orientation Guide (Visual Guide)</a></li>
           </ul>
 
-          <h3 style="color: var(--primary-brown); margin-top: 2rem;">Reference Manuals</h3>
-          <p>Access detailed reference materials for bend radii, material properties, and engineering data.</p>
+          <h3 style="color: var(--primary-brown); margin-top: 2rem;">Bending Technique Illustrations</h3>
+          <p>Step-by-step visual references for different bending methods and their applications.</p>
           <ul class="resource-list">
-            <li><a href="#">PLACEHOLDER: Standard Bend Radii Chart (PDF)</a></li>
-            <li><a href="#">PLACEHOLDER: Material Properties for Steel & Alloys (PDF)</a></li>
-            <li><a href="#">PLACEHOLDER: Aluminum Bending Guidelines (PDF)</a></li>
-            <li><a href="#">PLACEHOLDER: Minimum Radius by Material Type (PDF)</a></li>
-            <li><a href="#">PLACEHOLDER: Engineering Reference Handbook (PDF)</a></li>
+            <li><a href="#">PLACEHOLDER: Roll Bending Process Illustration (PDF)</a></li>
+            <li><a href="#">PLACEHOLDER: Draw Bending Technique Guide (PDF)</a></li>
+            <li><a href="#">PLACEHOLDER: Coil Bending Overview (PDF)</a></li>
+            <li><a href="#">PLACEHOLDER: Compression Bending Setup (PDF)</a></li>
           </ul>
         </div>
       </div>
 
-      <!-- Documents Section -->
-      <div class="accordion-section" id="documents">
-        <div class="accordion-header">
-          <h2 style="color: white; margin: 0;">Documents</h2>
-          <span class="accordion-toggle">▼</span>
-        </div>
-        <div class="accordion-content">
-          <p>Download documents provided by Compass Bending for Compliance, Engineering, and Certifications.</p>
-
-          <ul class="resource-list">
-            <li><a href="#">PLACEHOLDER: Pipe Bending Specifications (PDF)</a></li>
-            <li><a href="#">PLACEHOLDER: Bend Table Specifications (PDF)</a></li>
-            <li><a href="#">PLACEHOLDER: Shipping Terms and Service</a></li>
-            <li><a href="#">PLACEHOLDER: Materials Supported by Compass</a></li>
-            <li><a href="#">PLACEHOLDER: Tooling Setup and Important Information</a></li>
-          </ul>
-        </div>
-      </div>
 
       <!-- Glossary Section -->
       <div class="accordion-section" id="glossary">
@@ -343,6 +706,14 @@
             <strong>Annealing</strong>
             <p>Heat treatment process that softens metal and relieves internal stress, making material more ductile and easier to bend.</p>
           </div>
+          <div class="glossary-term">
+            <strong>ASME</strong>
+            <p>American Society for Metallurgical Engineering - the governing body for pipe and fabrication standards.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>ASTM</strong>
+            <p>American Society for Testing and Materials - the governing body for pipe and fabrication standards.</p>
+          </div>
 
           <h3 class="glossary-letter">B</h3>
           <div class="glossary-term">
@@ -357,11 +728,51 @@
             <strong>Bend Radius</strong>
             <p>The measurement of the curve created by a bend, typically measured from the center of the curve to the inside edge of the bent material.</p>
           </div>
+          <div class="glossary-term">
+            <strong>Bend Test</strong>
+            <p>Test of the weld seam of welded pipe, performed to verify weld integrity and material properties (destructive test).</p>
+          </div>
+          <div class="glossary-term">
+            <strong>BL (Bill of Lading)</strong>
+            <p>Official shipping document that records the shipment details, contents, and delivery terms for transportation.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>3D/5D/10D/15D/20D</strong>
+            <p>Radius of a bend expressed in multiples of the pipe's nominal size (not outside diameter). For example: 4" ø 20D = 80" centerline radius.</p>
+          </div>
 
           <h3 class="glossary-letter">C</h3>
           <div class="glossary-term">
+            <strong>C.S. (Carbon Steel)</strong>
+            <p>Carbon steel or mild steel, a common material used in pipe bending applications.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Cat (Category)</strong>
+            <p>Temperature service category designation for pipe material (e.g., Cat1 for above 0°C service, Cat2 for low temperature service at specified temperatures like -45°C, Cat3 for low temp with different requirements).</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Centre to End (C/E, C-E)</strong>
+            <p>Dimension measurement from the centre line of one line of the bend to the other end of the bend.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Centre to T.P.</strong>
+            <p>Dimension from the centre line of one line of the bend to the tangent point of the other end of the bend.</p>
+          </div>
+          <div class="glossary-term">
             <strong>Centerline Radius (CLR)</strong>
             <p>The radius measured from the center of the curve to the centerline of the material (for tubes/pipe). The primary specification for bend design.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Charpy</strong>
+            <p>Charpy v-notch toughness test for low temperature service material - a destructive test used to verify material properties.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Chord</strong>
+            <p>A straight line measurement across an arc of a curve.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>CL (Centre Line)</strong>
+            <p>The imaginary line through the centre of an object, used as a reference for measurements.</p>
           </div>
           <div class="glossary-term">
             <strong>Coil Bending</strong>
@@ -371,8 +782,40 @@
             <strong>Cold Bending</strong>
             <p>Bending material at room temperature without heating, commonly used for most commercial bending applications.</p>
           </div>
+          <div class="glossary-term">
+            <strong>CSA (Canadian Standards Association)</strong>
+            <p>The standards organization that determines pipe, pipeline, and bending specifications, requirements, and tolerances for Canadian applications.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>CSA Grade</strong>
+            <p>Pipe grade classification for seamless or welded carbon steel pipe according to CSA standards.</p>
+          </div>
 
           <h3 class="glossary-letter">D</h3>
+          <div class="glossary-term">
+            <strong>D (Radius Multiplier)</strong>
+            <p>The radius multiplier used in bend specifications where D x pipe diameter = centerline radius (e.g., 6" ø / 20D = 6" x 20 = 120" CLR).</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Deformation</strong>
+            <p>The change in shape or dimensions of material as a result of bending. Can be elastic (recovers) or plastic (permanent).</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Developed Length (D.L.)</strong>
+            <p>The arc length of the bent section only, used for material calculations and engineering specifications.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Destructive Test</strong>
+            <p>Testing method that must destroy the sample material in order to evaluate its properties, such as bend tests, tensile tests, and Charpy tests.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Dual Grade</strong>
+            <p>Material which is certified to meet different grades, codes, or standards simultaneously (e.g., A333-6/Gr359 would be certified to both ASTM A333-6 and CSA Gr359 standards).</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Diameter (dia., D, Ø)</strong>
+            <p>The measurement across the widest part of a circular or cylindrical object, represented by the symbol Ø.</p>
+          </div>
           <div class="glossary-term">
             <strong>Die</strong>
             <p>A shaped tool that forms the outer profile of the bend. Different dies produce different bend radii and shapes.</p>
@@ -380,10 +823,6 @@
           <div class="glossary-term">
             <strong>Draw Bending</strong>
             <p>A bending method using a mandrel (internal support) and die to create precise, tight-radius bends for pipe and tube work.</p>
-          </div>
-          <div class="glossary-term">
-            <strong>Deformation</strong>
-            <p>The change in shape or dimensions of material as a result of bending. Can be elastic (recovers) or plastic (permanent).</p>
           </div>
 
           <h3 class="glossary-letter">E</h3>
@@ -419,11 +858,35 @@
             <strong>Grain Direction</strong>
             <p>The directional alignment of crystals in metal, which affects bending performance and material strength.</p>
           </div>
+          <div class="glossary-term">
+            <strong>Gr (Grade)</strong>
+            <p>Material type or grade classification for pipe and steel products, such as Gr359, Gr414, Gr448.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Grip</strong>
+            <p>The straight section of material used by bending machinery to hold the ends of material during bending (can be the tangent section).</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Hardness</strong>
+            <p>The hardness of material as tested with various types of equipment and measured by various standards (e.g., Vickers, Brinnell hardness tests).</p>
+          </div>
 
           <h3 class="glossary-letter">H</h3>
           <div class="glossary-term">
+            <strong>Heat Number</strong>
+            <p>The manufacturer's identification number or batch number for a specific heat (batch) of material.</p>
+          </div>
+          <div class="glossary-term">
             <strong>Heat Treating</strong>
             <p>Controlled heating and cooling of metal to modify its properties, hardness, and workability.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>HIC (Hydrogen Induced Cracking)</strong>
+            <p>Hydrogen induced cracking resistant material designed for very high sulfur content environments.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Heat Treatment / Stress Relief / PBHT (Post-Bend Heat Treatment)</strong>
+            <p>Controlled heating and cooling process performed in a furnace to change a material's properties and relieve internal stresses after bending.</p>
           </div>
           <div class="glossary-term">
             <strong>Hot Bending</strong>
@@ -432,12 +895,26 @@
 
           <h3 class="glossary-letter">I</h3>
           <div class="glossary-term">
+            <strong>ID (Inside Diameter)</strong>
+            <p>The measurement of the diameter on the inside surface of a hollow pipe or tube.</p>
+          </div>
+          <div class="glossary-term">
             <strong>Induction Bending</strong>
             <p>A bending method using electromagnetic induction to heat a localized area of the pipe while bending, reducing springback and enabling tighter radii.</p>
           </div>
           <div class="glossary-term">
             <strong>Inside Radius</strong>
             <p>The measurement of the curve on the inner surface of a bend, from the center point of the curve.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>IR (Inside Radius)</strong>
+            <p>The radius measurement to the inside edge of a bent object.</p>
+          </div>
+
+          <h3 class="glossary-letter">L</h3>
+          <div class="glossary-term">
+            <strong>LPI (Liquid Penetrant Inspection)</strong>
+            <p>Non-destructive testing method using liquid dye and black light to detect surface and subsurface imperfections, used for similar purposes as MPI.</p>
           </div>
 
           <h3 class="glossary-letter">M</h3>
@@ -446,24 +923,68 @@
             <p>An internal support tool inserted into a tube or pipe during bending to prevent collapse, wrinkles, or deformation of the inside surface.</p>
           </div>
           <div class="glossary-term">
+            <strong>Manufacturer</strong>
+            <p>The company or entity that produces the pipe or material.</p>
+          </div>
+          <div class="glossary-term">
             <strong>Material Specification</strong>
             <p>The documented properties and grade of material, including composition, strength, and workability characteristics.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>MPI (Magnetic Particle Inspection)</strong>
+            <p>A non-destructive testing method using magnetic particles to detect surface and subsurface defects in ferromagnetic materials.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>MTR (Mill Test Report)</strong>
+            <p>Official documentation from the pipe manufacturer (also called mill certificate or mill cert.) that certifies material properties and composition.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Mtl (Material)</strong>
+            <p>Abbreviation for material type or material specification.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Microhardness</strong>
+            <p>A series of hardness tests performed on a cross-section cut from a pipe to test hardness throughout the pipe wall thickness.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Mill</strong>
+            <p>The pipe manufacturer or pipe mill - the facility that produces the pipe.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Mill Cert / Mill Certificate</strong>
+            <p>Official mill test certificate, same as MTR (mill test report).</p>
           </div>
 
           <h3 class="glossary-letter">N</h3>
           <div class="glossary-term">
-            <strong>Neutral Axis</strong>
-            <p>The imaginary line through the thickness of material where there is neither compression nor elongation during bending.</p>
+            <strong>Nominal</strong>
+            <p>The name or designation given to a pipe size, which is not always a direct relation to its exact size (e.g., 6" nominal pipe is actually 6.625" in outside diameter).</p>
           </div>
           <div class="glossary-term">
             <strong>Non-Destructive Testing (NDT)</strong>
             <p>Inspection methods that evaluate material properties without damaging the part, including ultrasonic, X-ray, and dye penetrant testing.</p>
           </div>
+          <div class="glossary-term">
+            <strong>Nondestructive Test</strong>
+            <p>Testing which does not destroy the sample material, allowing the part to remain usable after inspection.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Neutral Axis</strong>
+            <p>The imaginary line through the thickness of material where there is neither compression nor elongation during bending.</p>
+          </div>
 
           <h3 class="glossary-letter">O</h3>
           <div class="glossary-term">
+            <strong>OD (Outside Diameter)</strong>
+            <p>The measurement of the diameter on the outside surface of a pipe or tube.</p>
+          </div>
+          <div class="glossary-term">
             <strong>Offset Bending</strong>
             <p>Creating a parallel displacement in a pipe or tube by making two bends in opposite directions.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>OR (Outside Radius)</strong>
+            <p>The radius measurement to the outside edge of a bent object.</p>
           </div>
           <div class="glossary-term">
             <strong>Outside Radius</strong>
@@ -472,8 +993,16 @@
 
           <h3 class="glossary-letter">P</h3>
           <div class="glossary-term">
+            <strong>P.O. (Purchase Order)</strong>
+            <p>Official order number used to order goods or services from a supplier.</p>
+          </div>
+          <div class="glossary-term">
             <strong>Plastic Deformation</strong>
             <p>Permanent change in shape of material that does not recover after stress is removed, the desired result in bending operations.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Plus or Minus (±)</strong>
+            <p>Symbol indicating approximate tolerance or variation range for a specification.</p>
           </div>
           <div class="glossary-term">
             <strong>Pressure Testing</strong>
@@ -488,6 +1017,10 @@
           <div class="glossary-term">
             <strong>Radius</strong>
             <p>The distance from the center of a curve to any point on the curve, expressed in inches or millimeters.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Rise</strong>
+            <p>The measurement from the middle of chord length to the arc of a portion of a curve, used to verify bend geometry.</p>
           </div>
           <div class="glossary-term">
             <strong>Roller</strong>
@@ -511,19 +1044,51 @@
             <strong>Springback</strong>
             <p>The elastic recovery of material after bending forces are removed, causing the material to partially return toward its original shape.</p>
           </div>
+          <div class="glossary-term">
+            <strong>SS (Sour Service)</strong>
+            <p>Service designation for pipe and materials used in sulfur gas areas or high-hydrogen sulfide environments.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Sweet</strong>
+            <p>Designation for pipe that is not sour service (does not need sour service material specifications).</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Shrink Sleeves</strong>
+            <p>Polyurethane coating in sheet or tube form used to coat pipe by heat shrinking, applied for protection and insulation.</p>
+          </div>
 
           <h3 class="glossary-letter">T</h3>
+          <div class="glossary-term">
+            <strong>Tag</strong>
+            <p>Project reference or marking information used to identify and track bent components.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Tangent</strong>
+            <p>The straight section of pipe on each end of a bend, connecting the bend to the rest of the assembly.</p>
+          </div>
           <div class="glossary-term">
             <strong>Tangent Length</strong>
             <p>The straight portion of material between the center point of one bend and the start of the next bend.</p>
           </div>
           <div class="glossary-term">
-            <strong>Tangent Point</strong>
-            <p>The exact location where the straight section of material meets the curved section in a bend.</p>
+            <strong>Tangent Point (T.P.)</strong>
+            <p>The exact point on a bend where the bend starts or stops - the transition point from straight to curved material.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Tape Wrap</strong>
+            <p>Rubbery coating applied by wrapping continuously around pipe for protection and insulation purposes.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Tensile</strong>
+            <p>Tensile strength of material - a destructive test that measures the maximum stress a material can withstand under tension.</p>
           </div>
           <div class="glossary-term">
             <strong>Tolerance</strong>
             <p>The allowable variation in dimensions or angles for a finished part, specified in the engineering drawing.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>Transition Piece</strong>
+            <p>Short length of pipe machine thinner on one end to join two pipes of different wall thickness. Transitions can also be made on the ends of bends to eliminate the need for a separate transition piece.</p>
           </div>
 
           <h3 class="glossary-letter">U</h3>
@@ -531,8 +1096,16 @@
             <strong>Ultimate Tensile Strength</strong>
             <p>The maximum stress a material can withstand before breaking or failing under tension.</p>
           </div>
+          <div class="glossary-term">
+            <strong>U.T. (Ultrasonic Testing)</strong>
+            <p>Non-destructive testing method used to measure wall thickness and detect internal flaws in pipe and materials.</p>
+          </div>
 
           <h3 class="glossary-letter">W</h3>
+          <div class="glossary-term">
+            <strong>Wall</strong>
+            <p>The wall thickness of hollow material (pipe, tubing), measured in inches or millimeters.</p>
+          </div>
           <div class="glossary-term">
             <strong>Wall Thickness</strong>
             <p>The thickness of material in a pipe, tube, or hollow section, measured in inches or millimeters.</p>
@@ -542,14 +1115,26 @@
             <p>Bending of welded pipe joints or seams, requiring special care to avoid cracking or stress concentration at weld lines.</p>
           </div>
           <div class="glossary-term">
+            <strong>WO (Work Order)</strong>
+            <p>Shop order with detailed information for processing and tracking jobs through the bending facility.</p>
+          </div>
+          <div class="glossary-term">
             <strong>Wrinkle</strong>
             <p>An undesirable fold or crease on the inside surface of a bend, typically caused by inadequate mandrel support or excessive bending force.</p>
           </div>
 
           <h3 class="glossary-letter">Y</h3>
           <div class="glossary-term">
+            <strong>Yield</strong>
+            <p>Yield strength of material - the stress at which material begins to deform permanently, an important property for determining bending difficulty.</p>
+          </div>
+          <div class="glossary-term">
             <strong>Yield Strength</strong>
             <p>The stress at which material begins to deform permanently, an important property for determining bending difficulty.</p>
+          </div>
+          <div class="glossary-term">
+            <strong>YJ (Yellow Jacket)</strong>
+            <p>Polyurethane coating (may be white or other colors) applied to pipe for protection and insulation. Available in different types: YJ1, YJ2, YJ2K - representing different coating process and material variations.</p>
           </div>
 
           <h3 class="glossary-letter">Z</h3>
@@ -570,7 +1155,8 @@
             <form>
               <input type="text" name="name" placeholder="Your Name" required>
               <input type="email" name="email" placeholder="Your Email" required>
-              <input type="text" name="phone" placeholder="Phone Number">
+              <input type="text" name="phone" placeholder="Phone Number (Optional)">
+              <input type="text" name="company" placeholder="Company (Optional)">
               <textarea name="message" placeholder="Your Message" required></textarea>
               <input type="file" name="attachment" accept=".pdf,.doc,.docx,.dwg,.zip,.jpg,.jpeg,.png">
               <input type="submit" value="Submit">

@@ -5,12 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Compass Bending - Metal Bending Services</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .testimonials-carousel-container {
+      width: 100%;
+      margin: 2rem 0;
+      overflow: hidden;
+      background-color: #ffffff;
+    }
+    .testimonials-carousel-wrapper {
+      display: flex;
+      animation: scroll 40s linear infinite;
+    }
+    .testimonials-carousel-slide {
+      flex: 0 0 25%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      min-width: 25%;
+      background-color: var(--light-gray);
+      border-left: 3px solid var(--orange);
+      margin: 0.5rem;
+      border-radius: 4px;
+    }
+    .testimonials-carousel-slide p {
+      margin: 0;
+      color: #333;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      text-align: center;
+    }
+    .testimonials-carousel-slide .testimonial-author {
+      margin-top: 1rem;
+      font-weight: bold;
+      color: var(--primary-brown);
+      font-size: 0.85rem;
+    }
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
 </head>
 <body>
  <header>
   <div class="header-content">
     <a href="index.html" class="logo">
-      <img src="assets/images/logoblack.png" alt="Compass Bending Logo">
+      <img src="assets/images/compass-logo.png" alt="Compass Bending Logo">
     </a>
     <nav>
       <ul class="main-menu">
@@ -32,6 +77,10 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
+    <div class="search-container">
+      <input type="text" id="searchInput" class="search-input" placeholder="Search...">
+      <div id="searchResults" class="search-results"></div>
+    </div>
   </div>
 </header>
 
@@ -150,7 +199,8 @@
           <form>
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
-            <input type="text" name="phone" placeholder="Phone Number">
+            <input type="text" name="phone" placeholder="Phone Number (Optional)">
+            <input type="text" name="company" placeholder="Company (Optional)">
             <textarea name="message" placeholder="Your Message" required></textarea>
             <input type="file" name="attachment" accept=".pdf,.doc,.docx,.dwg,.zip,.jpg,.jpeg,.png">
             <input type="submit" value="Submit">
@@ -173,6 +223,160 @@
       </div>
     </section>
 
+    <!-- Testimonials Carousel -->
+    <section style="margin-top: 3rem; margin-bottom: 3rem;">
+      <h2>What Our Customers Say</h2>
+      <div class="testimonials-carousel-container">
+        <div class="testimonials-carousel-wrapper">
+          <div class="testimonials-carousel-slide">
+            <div>
+              <p>"Thank you for all the great service over the many years!"</p>
+              <div class="testimonial-author">— Mike W.</div>
+            </div>
+          </div>
+          <div class="testimonials-carousel-slide">
+            <div>
+              <p>"You guys did a fantastic job for us. Any more bends we need will be going right to you."</p>
+              <div class="testimonial-author">— Shaun H.</div>
+            </div>
+          </div>
+          <div class="testimonials-carousel-slide">
+            <div>
+              <p>"The bends were absolutely great. Everything was perfectly square and we had an easy assembly process."</p>
+              <div class="testimonial-author">— Shawn G.</div>
+            </div>
+          </div>
+          <div class="testimonials-carousel-slide">
+            <div>
+              <p>"You guys are always great to deal with."</p>
+              <div class="testimonial-author">— F. B.</div>
+            </div>
+          </div>
+          <div class="testimonials-carousel-slide">
+            <div>
+              <p>"You are our first call. We appreciate your team. We work well together."</p>
+              <div class="testimonial-author">— John P.</div>
+            </div>
+          </div>
+          <div class="testimonials-carousel-slide">
+            <div>
+              <p>"You guys are the only company we go to for bends. You guys are #1 in my books. I will not go to anyone else."</p>
+              <div class="testimonial-author">— Keith C.</div>
+            </div>
+          </div>
+          <div class="testimonials-carousel-slide">
+            <div>
+              <p>"Compass Bending was an absolute pleasure to do business with. You have always done great work for me, so I am happy to refer clients to you."</p>
+              <div class="testimonial-author">— Dave C.</div>
+            </div>
+          </div>
+          <div class="testimonials-carousel-slide">
+            <div>
+              <p>"Your quick quotes are appreciated. Other companies are not so easy to deal with."</p>
+              <div class="testimonial-author">— Tom C.</div>
+            </div>
+          </div>
+          <div class="testimonials-carousel-slide">
+            <div>
+              <p>"I have used Compass quite a bit in the past. Great company, great people."</p>
+              <div class="testimonial-author">— Bill S.</div>
+            </div>
+          </div>
+          <div class="testimonials-carousel-slide">
+            <div>
+              <p>"I have been getting bends from you guys for 15 years, you have always figured a way to get them up to me."</p>
+              <div class="testimonial-author">— Marty S.</div>
+            </div>
+          </div>
+          <div class="testimonials-carousel-slide">
+            <div>
+              <p>"We are very happy with the ring's quality and consistency. The rolled angles fit like a glove."</p>
+              <div class="testimonial-author">— Ken S.</div>
+            </div>
+          </div>
+          <div class="testimonials-carousel-slide">
+            <div>
+              <p>"I go to Compass Bending for all my stuff."</p>
+              <div class="testimonial-author">— Corrine E.</div>
+            </div>
+          </div>
+          <!-- Repeat for seamless loop -->
+          <div class="testimonials-carousel-slide">
+            <div>
+              <p>"Thank you for all the great service over the many years!"</p>
+              <div class="testimonial-author">— Mike W.</div>
+            </div>
+          </div>
+          <div class="testimonials-carousel-slide">
+            <div>
+              <p>"You guys did a fantastic job for us. Any more bends we need will be going right to you."</p>
+              <div class="testimonial-author">— Shaun H.</div>
+            </div>
+          </div>
+          <div class="testimonials-carousel-slide">
+            <div>
+              <p>"The bends were absolutely great. Everything was perfectly square and we had an easy assembly process."</p>
+              <div class="testimonial-author">— Shawn G.</div>
+            </div>
+          </div>
+          <div class="testimonials-carousel-slide">
+            <div>
+              <p>"You guys are always great to deal with."</p>
+              <div class="testimonial-author">— F. B.</div>
+            </div>
+          </div>
+          <div class="testimonials-carousel-slide">
+            <div>
+              <p>"You are our first call. We appreciate your team. We work well together."</p>
+              <div class="testimonial-author">— John P.</div>
+            </div>
+          </div>
+          <div class="testimonials-carousel-slide">
+            <div>
+              <p>"You guys are the only company we go to for bends. You guys are #1 in my books. I will not go to anyone else."</p>
+              <div class="testimonial-author">— Keith C.</div>
+            </div>
+          </div>
+          <div class="testimonials-carousel-slide">
+            <div>
+              <p>"Compass Bending was an absolute pleasure to do business with. You have always done great work for me, so I am happy to refer clients to you."</p>
+              <div class="testimonial-author">— Dave C.</div>
+            </div>
+          </div>
+          <div class="testimonials-carousel-slide">
+            <div>
+              <p>"Your quick quotes are appreciated. Other companies are not so easy to deal with."</p>
+              <div class="testimonial-author">— Tom C.</div>
+            </div>
+          </div>
+          <div class="testimonials-carousel-slide">
+            <div>
+              <p>"I have used Compass quite a bit in the past. Great company, great people."</p>
+              <div class="testimonial-author">— Bill S.</div>
+            </div>
+          </div>
+          <div class="testimonials-carousel-slide">
+            <div>
+              <p>"I have been getting bends from you guys for 15 years, you have always figured a way to get them up to me."</p>
+              <div class="testimonial-author">— Marty S.</div>
+            </div>
+          </div>
+          <div class="testimonials-carousel-slide">
+            <div>
+              <p>"We are very happy with the ring's quality and consistency. The rolled angles fit like a glove."</p>
+              <div class="testimonial-author">— Ken S.</div>
+            </div>
+          </div>
+          <div class="testimonials-carousel-slide">
+            <div>
+              <p>"I go to Compass Bending for all my stuff."</p>
+              <div class="testimonial-author">— Corrine E.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- FAQ Section -->
     <section>
       <h2>Frequently Asked Questions</h2>
@@ -189,13 +393,9 @@
         <h3>Can I supply my own material?</h3>
         <p>Yes. We can supply material but will work with yours if that’s your preference. If you like, we can quote material and labour separately so you can decide if you’d want us to supply material or not.</p>
       </div>
-      <div class="faq-item">
-        <h3>Do you only work with steel?</h3>
-        <p>No. We work with almost all metals, including carbon steels, stainless steels, aluminum, copper, brass, spring steel, and many others.</p>
-      </div>
-      <div class="faq-item">
-        <h3> Do you do any fabrication or only bending? </h3>
-        <p>We do some fabrication, mostly in steel, but we can also weld aluminum. We also offer stud-welding for concrete anchors and some machining services in our in-house machine shop. These extra capabilities make it easier for our customers to do one-stop shopping.</p>
+
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="resources.html#faqs" style="display: inline-block; background-color: #1A1A1A; color: white; padding: 0.75rem 2rem; text-decoration: none; border-radius: 4px; font-weight: bold; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor=’#ec6f2a’" onmouseout="this.style.backgroundColor=’#1a1a1a’">View All FAQs</a>
       </div>
 
     </section>
