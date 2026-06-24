@@ -413,7 +413,8 @@ function initTextRotation() {
 document.addEventListener('DOMContentLoaded', function() {
   rotateHeroImage();
   initTextRotation();
-  
+  initSearch();
+
   const hamburger = document.querySelector('.hamburger');
   const nav = document.querySelector('nav');
 
@@ -474,12 +475,84 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// Search Bar Functionality
+const searchIndex = [
+  { title: 'Roll Bending', url: 'capabilities.html#roll-bending', keywords: 'roll bending solid bars brackets channel beams plate radius compound multi-plane' },
+  { title: 'Draw Bending', url: 'capabilities.html#draw-bending', keywords: 'draw bending pipe hollow tube custom profiles mandrel dies CNC' },
+  { title: 'Coil Bending', url: 'capabilities.html#coil-bending', keywords: 'coil bending springs industrial chemical processing pitch custom coils' },
+  { title: 'Compression Bending', url: 'capabilities.html#compression-bending', keywords: 'compression bending pipeline beam tubing sprung structures' },
+  { title: 'Fabrication & Finishing', url: 'capabilities.html#fabrication-finishing', keywords: 'fabrication welding custom assemblies machine shop drilling tapping threading' },
+  { title: 'Coatings & Insulation', url: 'capabilities.html#coatings-insulation', keywords: 'coating insulation powder galvanizing tape wrap shrink sleeve NACE AMPP' },
+  { title: 'Standards', url: 'capabilities.html#standards', keywords: 'standards certifications ASME ASTM API CSA PFI' },
+  { title: 'Quality Assurance', url: 'capabilities.html#quality-assurance', keywords: 'quality assurance MTR inspection test plan non-conformance' },
+  { title: 'Stocked Materials', url: 'capabilities.html#stocked-materials', keywords: 'inventory stock pipe structurals carbon steel stainless aluminum material' },
+  { title: 'Applications', url: 'applications.html', keywords: 'applications oil gas industrial infrastructure chemical processing' },
+  { title: 'Resources', url: 'resources.html', keywords: 'resources guides technical information documentation' },
+  { title: 'About Us', url: 'about.html', keywords: 'about company story history team values' },
+  { title: 'Blog', url: 'blog.html', keywords: 'blog news articles posts' },
+  { title: 'Careers', url: 'careers.html', keywords: 'careers jobs employment positions' },
+  { title: 'Contact', url: 'contact.html', keywords: 'contact information email phone address' },
+  { title: 'FAQs', url: 'faqs.html', keywords: 'frequently asked questions faq help support' },
+];
+
+function initSearch() {
+  const searchInput = document.getElementById('searchInput');
+  const searchResults = document.getElementById('searchResults');
+
+  if (!searchInput || !searchResults) return;
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.trim().toLowerCase();
+
+    if (query.length < 2) {
+      searchResults.classList.remove('visible');
+      return;
+    }
+
+    const results = searchIndex.filter(item => {
+      return item.title.toLowerCase().includes(query) ||
+             item.keywords.toLowerCase().includes(query);
+    });
+
+    displaySearchResults(results, searchResults);
+  });
+
+  // Close search results when clicking outside
+  document.addEventListener('click', function(event) {
+    if (!event.target.closest('.search-container')) {
+      searchResults.classList.remove('visible');
+    }
+  });
+}
+
+function displaySearchResults(results, container) {
+  container.innerHTML = '';
+
+  if (results.length === 0) {
+    container.innerHTML = '<div class="search-no-results">No results found</div>';
+    container.classList.add('visible');
+    return;
+  }
+
+  results.forEach(result => {
+    const resultItem = document.createElement('a');
+    resultItem.href = result.url;
+    resultItem.className = 'search-result-item';
+    resultItem.innerHTML = `
+      <span class="search-result-title">${result.title}</span>
+    `;
+    container.appendChild(resultItem);
+  });
+
+  container.classList.add('visible');
+}
+
 // FAQ Accordion
 document.querySelectorAll('.faq-item h3').forEach(header => {
   header.addEventListener('click', function() {
     const faqItem = this.parentElement;
     const answer = faqItem.querySelector('p');
-    
+
     // Toggle visibility
     if (answer.style.display === 'none') {
       answer.style.display = 'block';
