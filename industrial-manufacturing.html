@@ -5,45 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Industrial Manufacturing - Compass Bending</title>
   <link rel="stylesheet" href="assets/css/style.css">
-  <style>
-    .accordion-section {
-      margin: 1rem 0;
-      border: 1px solid #ddd;
-    }
-    .accordion-section.collapsed .accordion-content {
-      display: none;
-    }
-    .accordion-header {
-      background-color: #1A1A1A;
-      color: white;
-      padding: 1.5rem 2rem;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: background-color 0.3s ease;
-      user-select: none;
-      border-bottom: 3px solid var(--orange);
-    }
-    .accordion-header h2 {
-      margin: 0;
-      color: white;
-      font-size: 1.2rem;
-    }
-    .accordion-header:hover {
-      background-color: var(--rust-orange);
-    }
-    .accordion-content {
-      padding: 2rem;
-      background-color: white;
-    }
-    .accordion-toggle {
-      transition: transform 0.3s ease;
-    }
-    .accordion-section.collapsed .accordion-toggle {
-      transform: rotate(-90deg);
-    }
-  </style>
 </head>
 <body>
   <!-- Header & Navigation -->
@@ -93,117 +54,42 @@
     </section>
 
     <!-- Manufacturing Sectors -->
-    <div class="accordion-section" id="industries">
-      <div class="accordion-header" onclick="toggleAccordion('industries')">
-        <h2 style="margin: 0; color: white;">Industries We Serve</h2>
-        <span class="accordion-toggle">▼</span>
-      </div>
-      <div class="accordion-content">
-        <h4 style="color: var(--primary-brown);">Heavy Equipment Manufacturing</h4>
+    <section style="margin-top: 3rem; margin-bottom: 3rem;">
+      <h2>Industries We Serve</h2>
+      <div>
         <table>
           <thead>
             <tr>
-              <th>Component</th>
-              <th>Examples</th>
+              <th>Category</th>
+              <th>Description</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>Equipment Frames</strong></td>
-              <td>Chassis, structural support, attachment points</td>
+              <td><strong>Heavy Equipment Manufacturing</strong></td>
+              <td>Equipment frames, chassis, structural support systems, and attachment points for heavy machinery and construction equipment. Custom-engineered boom assemblies, reinforcement structures, and specialized geometries for oilfield and construction equipment. Structural assemblies built to withstand demanding field conditions and high-cycle operation.</td>
             </tr>
             <tr>
               <td><strong>Hydraulic Systems</strong></td>
-              <td>Custom piping, support arms, manifold brackets</td>
+              <td>Custom piping, support arms, manifold brackets, and hose routing assemblies for hydraulic equipment and machinery. Complete manifold support systems and integration with equipment frames. Precision-bent hydraulic lines and connection components built to tight specifications and safety standards.</td>
             </tr>
             <tr>
-              <td><strong>Structural Assemblies</strong></td>
-              <td>Boom assemblies, reinforcement, custom geometries</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h4 style="color: var(--primary-brown); margin-top: 2rem;">Fabrication & Metal Working Supply</h4>
-        <table>
-          <thead>
-            <tr>
-              <th>Application</th>
-              <th>Materials</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Structural Steel Bending</strong></td>
-              <td>Carbon steel, stainless steel beams, channels, angles</td>
+              <td><strong>Fabrication & Metal Working Supply</strong></td>
+              <td>Structural steel bending for carbon steel and stainless steel beams, channels, and angles used in equipment and building applications. Aluminum components including frames, profiles, and structural elements for lightweight assemblies. Round, square, and rectangular tube and pipe in carbon steel, stainless, and specialty materials for exhaust systems, suspension components, and custom assemblies.</td>
             </tr>
             <tr>
-              <td><strong>Aluminum Components</strong></td>
-              <td>Frames, profiles, structural elements</td>
-            </tr>
-            <tr>
-              <td><strong>Tube & Pipe</strong></td>
-              <td>Round, square, rectangular tube and pipe in various materials</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h4 style="color: var(--primary-brown); margin-top: 2rem;">Manufacturing Engineering & Services</h4>
-        <table>
-          <thead>
-            <tr>
-              <th>Service</th>
-              <th>Application</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Hydraulic Systems</strong></td>
-              <td>Custom piping and manifold support</td>
-            </tr>
-            <tr>
-              <td><strong>Custom Components</strong></td>
-              <td>Structural supports, brackets, custom assemblies</td>
-            </tr>
-            <tr>
-              <td><strong>Prototyping & Production</strong></td>
-              <td>Design collaboration, tooling, production runs</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h4 style="color: var(--primary-brown); margin-top: 2rem;">Supporting Infrastructure</h4>
-        <table>
-          <thead>
-            <tr>
-              <th>Sector</th>
-              <th>Components</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Energy & Oilfield</strong></td>
-              <td>Piping, structural support, specialized equipment</td>
-            </tr>
-            <tr>
-              <td><strong>Construction & Supply</strong></td>
-              <td>Equipment frames, support structures, tooling</td>
-            </tr>
-            <tr>
-              <td><strong>Automotive & Transportation</strong></td>
-              <td>Exhaust systems, suspension components, hydraulic lines</td>
+              <td><strong>Advanced Systems</strong></td>
+              <td>Advanced machinery components requiring tight tolerances in aluminum, specialty alloys, and other precision-workable metals. Complex multi-plane bends, compound curves, and intricate geometries for specialized applications. Custom component design, prototyping, production runs, and in-house tooling development to support complete manufacturing solutions.</td>
             </tr>
           </tbody>
         </table>
       </div>
-    </div>
+    </section>
 
     <!-- Quality & Standards -->
-    <div class="accordion-section" id="quality-standards">
-      <div class="accordion-header" onclick="toggleAccordion('quality-standards')">
-        <h2 style="margin: 0; color: white;">Quality & Standards</h2>
-        <span class="accordion-toggle">▼</span>
-      </div>
-      <div class="accordion-content">
+    <section style="margin-top: 3rem; margin-bottom: 3rem;">
+      <h2>Quality & Standards</h2>
+      <div>
         <h4 style="color: var(--primary-brown);">Testing & Inspection</h4>
         <table>
           <thead>
@@ -327,40 +213,87 @@
           </tbody>
         </table>
       </div>
-    </div>
+    </section>
 
     <!-- Shipping & Logistics -->
-    <div class="accordion-section" id="shipping">
-      <div class="accordion-header" onclick="toggleAccordion('shipping')">
-        <h2 style="margin: 0; color: white;">Shipping & Logistics</h2>
-        <span class="accordion-toggle">▼</span>
-      </div>
-      <div class="accordion-content">
-        <h4 style="color: var(--primary-brown);">Shipping Options</h4>
-        <table>
-          <thead>
-            <tr>
-              <th>Service Type</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Full Truck Load (FTL)</strong></td>
-              <td>Dedicated truck shipments for production runs</td>
-            </tr>
-            <tr>
-              <td><strong>Less Than Truck Load (LTL)</strong></td>
-              <td>Flexible options for smaller shipments</td>
-            </tr>
-            <tr>
-              <td><strong>Just-In-Time Delivery</strong></td>
-              <td>Coordinated delivery schedules to match your production timeline</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <section style="margin-top: 3rem; margin-bottom: 3rem;">
+      <h2>Shipping & Logistics</h2>
+      <p>We work with your preferred shipping arrangements. We can handle all shipping logistics, arrange material pickup from anywhere – local, domestic, or international – and manage customs and regulatory requirements. Tell us how you'd like it done and we'll make it happen.</p>
+
+      <h4 style="color: var(--primary-brown); margin-top: 1.5rem;">Shipping Services</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>Service Type</th>
+            <th>Description</th>
+            <th>Availability</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Full Truck Load (FTL)</strong></td>
+            <td>Dedicated truck shipments on decks and in vans</td>
+            <td>Local, domestic, and international</td>
+          </tr>
+          <tr>
+            <td><strong>Less Than Truck Load (LTL)</strong></td>
+            <td>Flexible options for smaller shipments</td>
+            <td>Local, domestic, and international</td>
+          </tr>
+          <tr>
+            <td><strong>Hotshot Services</strong></td>
+            <td>Time-sensitive deliveries with our gooseneck trailers</td>
+            <td>Rapid response available</td>
+          </tr>
+          <tr>
+            <td><strong>Oversized/Wide Loads</strong></td>
+            <td>Special handling for large items with our equipment and expertise</td>
+            <td>Alberta destinations</td>
+          </tr>
+          <tr>
+            <td><strong>Pilot Car Services</strong></td>
+            <td>Escort vehicles for loads requiring specialized transport</td>
+            <td>Available as needed</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4 style="color: var(--primary-brown); margin-top: 1.5rem;">Shipping Terms & Arrangements</h4>
+      <p style="margin-bottom: 1rem; font-size: 0.95rem; color: #666;"><strong>Note:</strong> The following are shipping terms (how freight is arranged and paid), not payment terms for goods.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Shipping Term</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Collect (Customer Pickup)</strong></td>
+            <td>Pick up shipments using your own transportation</td>
+          </tr>
+          <tr>
+            <td><strong>Prepaid & Charge</strong></td>
+            <td>We arrange and pay for shipping, freight charges billed to your account</td>
+          </tr>
+          <tr>
+            <td><strong>Customer Carrier</strong></td>
+            <td>You arrange shipment through your designated carriers</td>
+          </tr>
+          <tr>
+            <td><strong>Hotshot Shipping</strong></td>
+            <td>Time-sensitive delivery available — customer arranges or we arrange (prepaid & charge or collect)</td>
+          </tr>
+          <tr>
+            <td><strong>Special Instructions</strong></td>
+            <td>We can follow any special arrangements: use your preferred carrier, bill to your account, or call and hold for pickup</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4 style="color: var(--primary-brown); margin-top: 1.5rem;">International Shipping</h4>
+      <p>Material can be received from and shipped to anywhere in the world. With the assistance of our customs brokers and shipping department, we handle all customs and regulatory requirements to deliver processed materials to your desired destination.</p>
+    </section>
 
     <!-- CTA Section -->
     <section>
@@ -421,11 +354,5 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
-  <script>
-    function toggleAccordion(sectionId) {
-      const section = document.getElementById(sectionId);
-      section.classList.toggle('collapsed');
-    }
-  </script>
 </body>
 </html>
