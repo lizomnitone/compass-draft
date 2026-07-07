@@ -480,7 +480,7 @@ const searchIndex = [
   { title: 'Roll Bending', url: 'capabilities.html#roll-bending', keywords: 'roll bending solid bars brackets channel beams plate radius compound multi-plane' },
   { title: 'Draw Bending', url: 'capabilities.html#draw-bending', keywords: 'draw bending pipe hollow tube custom profiles mandrel dies CNC' },
   { title: 'Coil Bending', url: 'capabilities.html#coil-bending', keywords: 'coil bending springs industrial chemical processing pitch custom coils' },
-  { title: 'Compression Bending', url: 'capabilities.html#compression-bending', keywords: 'compression bending pipeline beam tubing sprung structures' },
+  { title: 'Compression Bending', url: 'capabilities.html#compression-bending', keywords: 'compression bending pipeline beam tubing' },
   { title: 'Fabrication & Finishing', url: 'capabilities.html#fabrication-finishing', keywords: 'fabrication welding custom assemblies machine shop drilling tapping threading' },
   { title: 'Coatings & Insulation', url: 'capabilities.html#coatings-insulation', keywords: 'coating insulation powder galvanizing tape wrap shrink sleeve NACE AMPP' },
   { title: 'Standards', url: 'capabilities.html#standards', keywords: 'standards certifications ASME ASTM API CSA PFI' },
