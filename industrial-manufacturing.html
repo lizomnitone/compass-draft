@@ -5,6 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Industrial Manufacturing - Compass Bending</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .accordion-section {
+      margin: 1rem 0;
+      border: 1px solid #ddd;
+    }
+    .accordion-section.collapsed .accordion-content {
+      display: none;
+    }
+    .accordion-header {
+      background-color: #1A1A1A;
+      color: white;
+      padding: 1.5rem 2rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s ease;
+      user-select: none;
+      border-bottom: 3px solid var(--orange);
+    }
+    .accordion-header h2 {
+      margin: 0;
+      color: white;
+      font-size: 1.2rem;
+    }
+    .accordion-header:hover {
+      background-color: var(--rust-orange);
+    }
+    .accordion-content {
+      padding: 2rem;
+      background-color: white;
+    }
+    .accordion-toggle {
+      transition: transform 0.3s ease;
+    }
+    .accordion-section.collapsed .accordion-toggle {
+      transform: rotate(-90deg);
+    }
+  </style>
 </head>
 <body>
   <!-- Header & Navigation -->
@@ -50,198 +89,278 @@
 
     <section style="margin-top: 3rem; margin-bottom: 3rem;">
       <h2>Overview</h2>
-      <p>Compass Bending partners with industrial manufacturers across multiple sectors, providing precision bending, fabrication, and assembly services. From equipment frames and hydraulic systems to complex structural components, we enable manufacturers to bring their designs to life reliably and on schedule.</p>
+      <p>Precision bending, fabrication, and assembly for industrial manufacturers. Equipment frames, hydraulic systems, structural components, and custom assemblies.</p>
     </section>
 
     <!-- Manufacturing Sectors -->
-    <section>
-      <h2>Manufacturing Sectors We Serve</h2>
-      <p>We partner with manufacturers and equipment makers across multiple industries, providing precision bending and fabrication support.</p>
+    <div class="accordion-section" id="industries">
+      <div class="accordion-header" onclick="toggleAccordion('industries')">
+        <h2 style="margin: 0; color: white;">Industries We Serve</h2>
+        <span class="accordion-toggle">▼</span>
+      </div>
+      <div class="accordion-content">
+        <h4 style="color: var(--primary-brown);">Heavy Equipment Manufacturing</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Component</th>
+              <th>Examples</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Equipment Frames</strong></td>
+              <td>Chassis, structural support, attachment points</td>
+            </tr>
+            <tr>
+              <td><strong>Hydraulic Systems</strong></td>
+              <td>Custom piping, support arms, manifold brackets</td>
+            </tr>
+            <tr>
+              <td><strong>Structural Assemblies</strong></td>
+              <td>Boom assemblies, reinforcement, custom geometries</td>
+            </tr>
+          </tbody>
+        </table>
 
-      <h3 style="color: var(--primary-brown); margin-top: 2rem;">Heavy Equipment Manufacturing</h3>
-      <p>Equipment frames, hydraulic piping, and structural components for construction machinery, excavators, loaders, and heavy industrial equipment.</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Component</th>
-            <th>Examples</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Equipment Frames</strong></td>
-            <td>Chassis, structural support, attachment points</td>
-          </tr>
-          <tr>
-            <td><strong>Hydraulic Systems</strong></td>
-            <td>Custom piping, support arms, manifold brackets</td>
-          </tr>
-          <tr>
-            <td><strong>Structural Assemblies</strong></td>
-            <td>Boom assemblies, reinforcement, custom geometries</td>
-          </tr>
-        </tbody>
-      </table>
+        <h4 style="color: var(--primary-brown); margin-top: 2rem;">Fabrication & Metal Working Supply</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Application</th>
+              <th>Materials</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Structural Steel Bending</strong></td>
+              <td>Carbon steel, stainless steel beams, channels, angles</td>
+            </tr>
+            <tr>
+              <td><strong>Aluminum Components</strong></td>
+              <td>Frames, profiles, structural elements</td>
+            </tr>
+            <tr>
+              <td><strong>Tube & Pipe</strong></td>
+              <td>Round, square, rectangular tube and pipe in various materials</td>
+            </tr>
+          </tbody>
+        </table>
 
-      <h3 style="color: var(--primary-brown); margin-top: 2rem;">Fabrication & Metal Working Supply</h3>
-      <p>We support metal fabrication shops and structural steel contractors by providing precision bending services on carbon steel, stainless steel, and aluminum.</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Application</th>
-            <th>Materials</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Structural Steel Bending</strong></td>
-            <td>Carbon steel, stainless steel beams, channels, angles</td>
-          </tr>
-          <tr>
-            <td><strong>Aluminum Components</strong></td>
-            <td>Frames, profiles, structural elements</td>
-          </tr>
-          <tr>
-            <td><strong>Tube & Pipe</strong></td>
-            <td>Round, square, rectangular tube and pipe in various materials</td>
-          </tr>
-        </tbody>
-      </table>
+        <h4 style="color: var(--primary-brown); margin-top: 2rem;">Manufacturing Engineering & Services</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Application</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Hydraulic Systems</strong></td>
+              <td>Custom piping and manifold support</td>
+            </tr>
+            <tr>
+              <td><strong>Custom Components</strong></td>
+              <td>Structural supports, brackets, custom assemblies</td>
+            </tr>
+            <tr>
+              <td><strong>Prototyping & Production</strong></td>
+              <td>Design collaboration, tooling, production runs</td>
+            </tr>
+          </tbody>
+        </table>
 
-      <h3 style="color: var(--primary-brown); margin-top: 2rem;">Manufacturing Engineering & Services</h3>
-      <p>Engineering firms and specialized manufacturers rely on us for hydraulic systems, custom components, and precision fabrication for engineered equipment.</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Service</th>
-            <th>Application</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Hydraulic Systems</strong></td>
-            <td>Custom piping and manifold support</td>
-          </tr>
-          <tr>
-            <td><strong>Custom Components</strong></td>
-            <td>Structural supports, brackets, custom assemblies</td>
-          </tr>
-          <tr>
-            <td><strong>Prototyping & Production</strong></td>
-            <td>Design collaboration, tooling, production runs</td>
-          </tr>
-        </tbody>
-      </table>
+        <h4 style="color: var(--primary-brown); margin-top: 2rem;">Supporting Infrastructure</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Sector</th>
+              <th>Components</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Energy & Oilfield</strong></td>
+              <td>Piping, structural support, specialized equipment</td>
+            </tr>
+            <tr>
+              <td><strong>Construction & Supply</strong></td>
+              <td>Equipment frames, support structures, tooling</td>
+            </tr>
+            <tr>
+              <td><strong>Automotive & Transportation</strong></td>
+              <td>Exhaust systems, suspension components, hydraulic lines</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-      <h3 style="color: var(--primary-brown); margin-top: 2rem;">Supporting Infrastructure</h3>
-      <p>Companies in energy, construction, and industrial sectors use our bending services for product development and equipment support.</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Sector</th>
-            <th>Components</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Energy & Oilfield</strong></td>
-            <td>Piping, structural support, specialized equipment</td>
-          </tr>
-          <tr>
-            <td><strong>Construction & Supply</strong></td>
-            <td>Equipment frames, support structures, tooling</td>
-          </tr>
-          <tr>
-            <td><strong>Automotive & Transportation</strong></td>
-            <td>Exhaust systems, suspension components, hydraulic lines</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+    <!-- Quality & Standards -->
+    <div class="accordion-section" id="quality-standards">
+      <div class="accordion-header" onclick="toggleAccordion('quality-standards')">
+        <h2 style="margin: 0; color: white;">Quality & Standards</h2>
+        <span class="accordion-toggle">▼</span>
+      </div>
+      <div class="accordion-content">
+        <h4 style="color: var(--primary-brown);">Testing & Inspection</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Test/Inspection Type</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Dimensional Inspection</strong></td>
+              <td>Verification of bend radii, angles, and overall dimensions to specification</td>
+            </tr>
+            <tr>
+              <td><strong>Material Certifications</strong></td>
+              <td>Complete documentation for traceability and quality assurance</td>
+            </tr>
+            <tr>
+              <td><strong>Custom Testing</strong></td>
+              <td>Application-specific testing as required by specifications</td>
+            </tr>
+          </tbody>
+        </table>
 
-    <!-- Quality & Documentation -->
-    <section>
-      <h2>Quality & Standards</h2>
-      <p>Every industrial component meets rigorous quality standards to ensure performance and reliability in your manufacturing processes.</p>
+        <h4 style="color: var(--primary-brown); margin-top: 2rem;">Structural Steel Standards</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Standard</th>
+              <th>Material Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>ASTM A36</strong></td>
+              <td>General structural steel</td>
+              <td>General-purpose structural steel for equipment frames</td>
+            </tr>
+            <tr>
+              <td><strong>ASTM A500</strong></td>
+              <td>Cold-formed structural tubing (Shapes B & C)</td>
+              <td>Cold-formed structural tubing for equipment</td>
+            </tr>
+            <tr>
+              <td><strong>ASTM A992</strong></td>
+              <td>High-strength structural steel</td>
+              <td>High-strength structural steel for heavy equipment</td>
+            </tr>
+          </tbody>
+        </table>
 
-      <h4 style="color: var(--primary-brown); margin-top: 1.5rem;">Testing & Inspection</h4>
-      <table>
-        <thead>
-          <tr>
-            <th>Test/Inspection Type</th>
-            <th>Purpose</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Dimensional Inspection</strong></td>
-            <td>Verification of bend radii, angles, and overall dimensions to specification</td>
-          </tr>
-          <tr>
-            <td><strong>Material Certifications</strong></td>
-            <td>Complete documentation for traceability and quality assurance</td>
-          </tr>
-          <tr>
-            <td><strong>Custom Testing</strong></td>
-            <td>Application-specific testing as required by specifications</td>
-          </tr>
-        </tbody>
-      </table>
+        <h4 style="color: var(--primary-brown); margin-top: 2rem;">Mechanical & Hydraulic Systems</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Standard</th>
+              <th>Material Specification</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>ASTM A53B</strong></td>
+              <td>Carbon steel pipe, welded & seamless</td>
+              <td>General-purpose pipe for hydraulic systems and manifolds</td>
+            </tr>
+            <tr>
+              <td><strong>ASTM A106B</strong></td>
+              <td>Seamless carbon steel, high-temperature service</td>
+              <td>High-temp hydraulic and pressure systems</td>
+            </tr>
+            <tr>
+              <td><strong>ASTM A513</strong></td>
+              <td>ERW carbon steel mechanical tubing</td>
+              <td>Mechanical components, support structures, custom assemblies</td>
+            </tr>
+          </tbody>
+        </table>
 
-      <h4 style="color: var(--primary-brown); margin-top: 1.5rem;">Industry Standards</h4>
-      <table>
-        <thead>
-          <tr>
-            <th>Standard/Code</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>ASME B31</strong></td>
-            <td>Code for Pressure Piping and Process Piping</td>
-          </tr>
-          <tr>
-            <td><strong>ASTM</strong></td>
-            <td>Material specifications and testing standards</td>
-          </tr>
-          <tr>
-            <td><strong>Customer Specifications</strong></td>
-            <td>Engineering specifications and production standards</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+        <h4 style="color: var(--primary-brown); margin-top: 2rem;">Aluminum Alloys</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Alloy</th>
+              <th>Temper</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background-color: #fff3cd;">
+              <td><strong>6061</strong> <span style="background-color: #EC6F2A; color: white; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.85rem; font-weight: bold;">PRIMARY</span></td>
+              <td>T6</td>
+              <td>Heat-treated aluminum for lightweight frames and assemblies</td>
+            </tr>
+            <tr>
+              <td><strong>6063</strong></td>
+              <td>T5, T6, T52</td>
+              <td>Extruded aluminum for precision components and fixtures</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 style="color: var(--primary-brown); margin-top: 2rem;">Related Industry Standards</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Standard/Code</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>ASME B31</strong></td>
+              <td>Code for Pressure Piping and Process Piping</td>
+            </tr>
+            <tr>
+              <td><strong>Customer Specifications</strong></td>
+              <td>Engineering specifications and production standards</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
     <!-- Shipping & Logistics -->
-    <section>
-      <h2>Shipping & Logistics</h2>
-      <p>We handle all shipping and logistics for industrial components, from small precision parts to large equipment assemblies. Our fleet and carrier network ensure timely delivery to your manufacturing facility.</p>
-
-      <h4 style="color: var(--primary-brown); margin-top: 1.5rem;">Shipping Options</h4>
-      <table>
-        <thead>
-          <tr>
-            <th>Service Type</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Full Truck Load (FTL)</strong></td>
-            <td>Dedicated truck shipments for production runs</td>
-          </tr>
-          <tr>
-            <td><strong>Less Than Truck Load (LTL)</strong></td>
-            <td>Flexible options for smaller shipments</td>
-          </tr>
-          <tr>
-            <td><strong>Just-In-Time Delivery</strong></td>
-            <td>Coordinated delivery schedules to match your production timeline</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+    <div class="accordion-section" id="shipping">
+      <div class="accordion-header" onclick="toggleAccordion('shipping')">
+        <h2 style="margin: 0; color: white;">Shipping & Logistics</h2>
+        <span class="accordion-toggle">▼</span>
+      </div>
+      <div class="accordion-content">
+        <h4 style="color: var(--primary-brown);">Shipping Options</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Service Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Full Truck Load (FTL)</strong></td>
+              <td>Dedicated truck shipments for production runs</td>
+            </tr>
+            <tr>
+              <td><strong>Less Than Truck Load (LTL)</strong></td>
+              <td>Flexible options for smaller shipments</td>
+            </tr>
+            <tr>
+              <td><strong>Just-In-Time Delivery</strong></td>
+              <td>Coordinated delivery schedules to match your production timeline</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
     <!-- CTA Section -->
     <section>
@@ -302,5 +421,11 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script>
+    function toggleAccordion(sectionId) {
+      const section = document.getElementById(sectionId);
+      section.classList.toggle('collapsed');
+    }
+  </script>
 </body>
 </html>
