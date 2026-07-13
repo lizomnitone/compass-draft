@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us - Compass Bending</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
     .values-carousel-container {
       width: 100%;
@@ -23,13 +24,13 @@
       justify-content: center;
       padding: 2rem 1rem;
       min-width: 20%;
-      background-color: var(--light-gray);
-      border-left: 3px solid var(--orange);
+      background-color: #1a1a1a;
+      border-radius: 12px;
       margin: 0.5rem;
     }
     .values-carousel-slide h4 {
       margin: 0;
-      color: var(--primary-brown);
+      color: var(--white);
       text-align: center;
       font-size: 1.1rem;
     }
@@ -39,6 +40,52 @@
       }
       100% {
         transform: translateX(-100%);
+      }
+    }
+    .team-carousel-container {
+      width: 100%;
+      margin: 2rem 0;
+      overflow: hidden;
+      background-color: #ffffff;
+    }
+    .team-carousel-wrapper {
+      display: flex;
+      animation: scrollTeam 40s linear infinite;
+    }
+    .team-carousel-slide {
+      flex: 0 0 25%;
+      display: flex;
+      justify-content: center;
+      padding: 1.5rem;
+      min-width: 25%;
+    }
+    .team-carousel-slide > div {
+      text-align: center;
+      width: 100%;
+      max-width: 280px;
+    }
+    .team-carousel-slide img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1;
+      border-radius: 8px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+    .team-carousel-slide h3 {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+    .team-carousel-slide p {
+      margin: 0.25rem 0;
+      font-size: 0.95rem;
+    }
+    @keyframes scrollTeam {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
       }
     }
   </style>
@@ -92,15 +139,19 @@
       <div class="who-we-are">
         <div>
           <h2 style="margin-top: 0;">Our Story</h2>
-          <h3>A History of Great Work</h3>
-          <p>Colin Maskey started Compass Bending in 2004, coming from over 15 years of experience in the field. Our team prioritizes attention to detail, high quality standards, and a friendly attitude.</p>
-          <p class="mt-2">We strive for a personal service that meets the needs of our customers and goes beyond. We are open minded, and love challenging projects. We treat every customer, no matter the size of the job, as a long term opportunity for partnership.</p>
-          <p class="mt-2">With an experienced and professional team of over 30 employees, Compass Bending proudly serves customers all over North America.</p>
+          <p>When Colin Maskey started Compass in 2004, he was already experienced in the bending industry, and had handled a broad range of work.  He knew that the difference in revenue between big and small jobs was enormous, and that often the small jobs would get missed when chasing the bigger dollars.
+
+          <p class="mt-2">  At Compass, we treat the small jobs as carefully as the big ones. We like to shake your hand, know your name, and ensure all your requirements are crystal clear before we start.  </p>
+
+          <p class="mt-2">  Many of our clients are engineers and metalworking professionals, and we know our work will reflect on them as well.</p>
+
+           
+          <p class="mt-2" style="font-size: 1.2rem; font-weight: bold;">At Compass, our mission is to bend and form metal in such a precise and efficient manner that there simply is no better approach, or better customer experience. </p>
+          </p>
         </div>
         <div class="gallery-item"><img src="assets/images/team-photo.jpg" alt="Photo by riverwood photography"></div>
       </div>
     </section>
-
     <!-- Core Values Carousel -->
     <section style="margin-top: 3rem; margin-bottom: 3rem;">
       <h2>Our Core Values</h2>
@@ -183,38 +234,131 @@
     </section>
 
     <!-- Team Section -->
-    <section>
-      <h2>Leadership Team</h2>
-      <p>Meet the experienced professionals leading Compass Bending with decades of combined expertise in precision metal bending and fabrication.</p>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
-        <!-- Executive 1 -->
-        <div style="text-align: center;">
-          <div style="width: 100%; aspect-ratio: 1; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; overflow: hidden;">
-            <img src="assets/images/portrait-placeholder.jpeg" alt="Executive" style="width: 100%; height: 100%; object-fit: cover;">
+    <section style="margin-top: 3rem; margin-bottom: 3rem;">
+      <h2>Meet some of our team</h2>
+      <p>Experienced professionals across Compass Bending dedicated to precision metal bending and fabrication.</p>
+      <div class="team-carousel-container">
+        <div class="team-carousel-wrapper">
+          <!-- Executive 1 -->
+          <div class="team-carousel-slide">
+            <div>
+              <img src="assets/images/portrait-placeholder.jpeg" alt="Colin Maskey">
+              <h3>Colin Maskey</h3>
+              <p style="font-weight: bold;">Founder & CEO</p>
+              <p>Over 15 years of industry experience. Founded Compass Bending in 2004 with a focus on quality, reliability, and customer service.</p>
+            </div>
           </div>
-          <h3 style="margin: 0.5rem 0;">Colin Maskey</h3>
-          <p style="font-weight: bold; margin: 0.25rem 0;">Founder & CEO</p>
-          <p style="font-size: 0.95rem;">Over 15 years of industry experience. Founded Compass Bending in 2004 with a focus on quality, reliability, and customer service.</p>
-        </div>
 
-        <!-- Executive 2 -->
-        <div style="text-align: center;">
-          <div style="width: 100%; aspect-ratio: 1; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; overflow: hidden;">
-            <img src="assets/images/portrait-placeholder.jpeg" alt="Executive" style="width: 100%; height: 100%; object-fit: cover;">
+          <!-- Executive 2 -->
+          <div class="team-carousel-slide">
+            <div>
+              <img src="assets/images/portrait-placeholder.jpeg" alt="Team Member">
+              <h3>PLACEHOLDER</h3>
+              <p style="font-weight: bold;">[Title]</p>
+              <p>PLACEHOLDER</p>
+            </div>
           </div>
-          <h3 style="margin: 0.5rem 0;">PLACEHOLDER</h3>
-          <p style="font-weight: bold; margin: 0.25rem 0;">[Title]</p>
-          <p style="font-size: 0.95rem;">PLACEHOLDER</p>
-        </div>
 
-        <!-- Executive 3 -->
-        <div style="text-align: center;">
-          <div style="width: 100%; aspect-ratio: 1; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; overflow: hidden;">
-            <img src="assets/images/portrait-placeholder.jpeg" alt="Executive" style="width: 100%; height: 100%; object-fit: cover;">
+          <!-- Executive 3 -->
+          <div class="team-carousel-slide">
+            <div>
+              <img src="assets/images/portrait-placeholder.jpeg" alt="Team Member">
+              <h3>PLACEHOLDER</h3>
+              <p style="font-weight: bold;">[Title]</p>
+              <p>PLACEHOLDER</p>
+            </div>
           </div>
-          <h3 style="margin: 0.5rem 0;">PLACEHOLDER</h3>
-          <p style="font-weight: bold; margin: 0.25rem 0;">[Title]</p>
-          <p style="font-size: 0.95rem;">PLACEHOLDER</p>
+
+          <!-- Executive 4 -->
+          <div class="team-carousel-slide">
+            <div>
+              <img src="assets/images/portrait-placeholder.jpeg" alt="Team Member">
+              <h3>PLACEHOLDER</h3>
+              <p style="font-weight: bold;">[Title]</p>
+              <p>PLACEHOLDER</p>
+            </div>
+          </div>
+
+          <!-- Executive 5 -->
+          <div class="team-carousel-slide">
+            <div>
+              <img src="assets/images/portrait-placeholder.jpeg" alt="Team Member">
+              <h3>PLACEHOLDER</h3>
+              <p style="font-weight: bold;">[Title]</p>
+              <p>PLACEHOLDER</p>
+            </div>
+          </div>
+
+          <!-- Executive 6 -->
+          <div class="team-carousel-slide">
+            <div>
+              <img src="assets/images/portrait-placeholder.jpeg" alt="Team Member">
+              <h3>PLACEHOLDER</h3>
+              <p style="font-weight: bold;">[Title]</p>
+              <p>PLACEHOLDER</p>
+            </div>
+          </div>
+
+          <!-- Repeat for seamless loop -->
+          <!-- Executive 1 (repeat) -->
+          <div class="team-carousel-slide">
+            <div>
+              <img src="assets/images/portrait-placeholder.jpeg" alt="Colin Maskey">
+              <h3>Colin Maskey</h3>
+              <p style="font-weight: bold;">Founder & CEO</p>
+              <p>Over 15 years of industry experience. Founded Compass Bending in 2004 with a focus on quality, reliability, and customer service.</p>
+            </div>
+          </div>
+
+          <!-- Executive 2 (repeat) -->
+          <div class="team-carousel-slide">
+            <div>
+              <img src="assets/images/portrait-placeholder.jpeg" alt="Team Member">
+              <h3>PLACEHOLDER</h3>
+              <p style="font-weight: bold;">[Title]</p>
+              <p>PLACEHOLDER</p>
+            </div>
+          </div>
+
+          <!-- Executive 3 (repeat) -->
+          <div class="team-carousel-slide">
+            <div>
+              <img src="assets/images/portrait-placeholder.jpeg" alt="Team Member">
+              <h3>PLACEHOLDER</h3>
+              <p style="font-weight: bold;">[Title]</p>
+              <p>PLACEHOLDER</p>
+            </div>
+          </div>
+
+          <!-- Executive 4 (repeat) -->
+          <div class="team-carousel-slide">
+            <div>
+              <img src="assets/images/portrait-placeholder.jpeg" alt="Team Member">
+              <h3>PLACEHOLDER</h3>
+              <p style="font-weight: bold;">[Title]</p>
+              <p>PLACEHOLDER</p>
+            </div>
+          </div>
+
+          <!-- Executive 5 (repeat) -->
+          <div class="team-carousel-slide">
+            <div>
+              <img src="assets/images/portrait-placeholder.jpeg" alt="Team Member">
+              <h3>PLACEHOLDER</h3>
+              <p style="font-weight: bold;">[Title]</p>
+              <p>PLACEHOLDER</p>
+            </div>
+          </div>
+
+          <!-- Executive 6 (repeat) -->
+          <div class="team-carousel-slide">
+            <div>
+              <img src="assets/images/portrait-placeholder.jpeg" alt="Team Member">
+              <h3>PLACEHOLDER</h3>
+              <p style="font-weight: bold;">[Title]</p>
+              <p>PLACEHOLDER</p>
+            </div>
+          </div>
         </div>
       </div>
 

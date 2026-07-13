@@ -49,6 +49,17 @@
         transform: translateX(-100%);
       }
     }
+    .contact-section.home-cta {
+      grid-template-columns: 1fr 1fr;
+    }
+    .contact-section.home-cta .contact-box.featured {
+      grid-column: 1 / -1;
+    }
+    .featured-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem;
+    }
   </style>
 </head>
 <body>
@@ -148,11 +159,9 @@
     <section>
       <div class="who-we-are">
         <div>
-          <h2>Who we are</h2>
-          <h3>A History of Great Work</h3>
-          <p>Colin Maskey started Compass Bending in 2004, coming from over 15 years of experience in the field. Our team priotitizes attention to detail, high quality standards, and a friendly attitude.</p>
-          <p class="mt-2">We strive for a personal service that meets the needs of our customers and goes beyond. We are open minded, and love challenging projects. We treat every customer, no matter the size of the job, as a long term opportunity for partnership.</p>
-          <p class="mt-2">With an experienced and professional team of over 30 employees, Compass Bending proudly serves customers all over North America.</p>
+          <h2>20+ Years of Bending Expertise</h2>
+          <p>Colin Maskey started Compass Bending in 2004, coming from over 15 years' experience in the field. Today, our team is over 30 skilled employees, including many who have been with us since we opened. We proudly serve customers all over North America.</p>            
+          <p class="mt-2">We like to shake hands and know your name, because we care about personal service. We treat every customer, no matter the size of the job, as a long term opportunity for partnership.</p>
         </div>
         <div class="gallery-item"><img src="assets/images/team-photo.jpg" alt="Photo by riverwood photography"></div>
         <div class="/assets/images/shop-image.png">
@@ -182,16 +191,24 @@
     <!-- Let's Get Started Section -->
     <section>
       <h2>Let's Get Started</h2>
-      <div class="contact-section">
+      <div class="contact-section home-cta">
         <div class="contact-box featured">
-          <p class="mt-1" style="font-weight: bold;">Tell us about your project...</p>
-          <h3 id="projectTypeText" style="color: var(--white); overflow: hidden;">Oil and gas</h3>
+          <div class="featured-content">
+            <div>
+              <p class="mt-1" style="font-weight: bold;">Tell us about your project...</p>
+              <h3 id="projectTypeText" style="color: var(--white); overflow: hidden;">Oil and gas</h3>
+            </div>
 
-          <p class="mt-1" style="font-weight: bold;">If you need support with...</p>
-          <h3 id="contactText" style="color: var(--white); overflow: hidden;">Drawings</h3>
+            <div>
+              <p class="mt-1" style="font-weight: bold;">If you need support with...</p>
+              <h3 id="contactText" style="color: var(--white); overflow: hidden;">Drawings</h3>
+            </div>
 
-          <p class="mt-1" style="font-weight: bold;">Anything else you think we need to know...</p>
-          <h3 id="supportText" style="color: var(--white); overflow: hidden;">Materials</h3>
+            <div>
+              <p class="mt-1" style="font-weight: bold;">Anything else you think we need to know...</p>
+              <h3 id="supportText" style="color: var(--white); overflow: hidden;">Materials</h3>
+            </div>
+          </div>
         </div>
 
         <div class="contact-box">
