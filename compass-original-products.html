@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compass Original Products - Compass Bending</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .product-card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+    .product-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+    }
+    .product-content {
+      padding: 2rem;
+    }
+    .product-content h3 {
+      color: var(--primary-brown);
+      margin-top: 0;
+      font-size: 1.5rem;
+    }
+    .product-content p {
+      color: #666;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header>
+  <div class="header-content">
+    <a href="index.html" class="logo">
+      <img src="assets/images/compass-logo.png" alt="Compass Bending Logo">
+    </a>
+    <nav>
+      <ul class="main-menu">
+        <li><a href="capabilities.html">Capabilities</a></li>
+        <li><a href="applications.html">Applications</a></li>
+        <li><a href="resources.html">Resources</a></li>
+
+        <!-- About Dropdown -->
+        <li class="dropdown">
+          <a href="about.html">About</a>
+          <ul class="submenu">
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="careers.html">Careers</a></li>
+          </ul>
+        </li>
+
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="search-container">
+      <input type="text" id="searchInput" class="search-input" placeholder="Search...">
+      <div id="searchResults" class="search-results"></div>
+    </div>
+    <a href="https://www.linkedin.com/company/compass-bending-ltd./posts/?feedView=all" target="_blank" rel="noopener noreferrer" style="margin-left: 1rem; display: flex; align-items: center; color: var(--primary-brown); font-size: 1.3rem;" title="Follow us on LinkedIn">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.732-2.004 1.438-.103.252-.129.604-.129.956v5.411h-3.554s.047-8.767 0-9.67h3.554v1.369c.427-.659 1.191-1.598 2.897-1.598 2.117 0 3.704 1.385 3.704 4.362v5.537zM5.337 8.855c-1.144 0-1.915-.758-1.915-1.705 0-.955.768-1.703 1.959-1.703.948 0 1.915.748 1.915 1.703 0 .947-.767 1.705-1.959 1.705zm1.646 11.597H3.679V9.782h3.304v10.67zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
+      </svg>
+    </a>
+  </div>
+</header>
+
+  <!-- Hero Section -->
+  <section class="hero" style="background-image: url('assets/images/shop-image.png');">
+    <h1>Compass Original Products</h1>
+    <p>Quality metal products designed and manufactured by Compass Bending.</p>
+  </section>
+
+  <!-- Main Content -->
+  <div class="content-section">
+    <section style="margin-top: 3rem; margin-bottom: 3rem;">
+      <h2>Our Product Line</h2>
+      <p>Beyond custom bending services, Compass has developed its own line of high-quality metal products. Each piece is crafted with the same attention to detail and precision that defines our custom work. Whether you're looking for functional infrastructure products or decorative elements, our original products bring durability and style to any space.</p>
+    </section>
+
+    <!-- Products Grid -->
+    <section style="margin-top: 3rem; margin-bottom: 3rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 2rem;">
+
+        <!-- Bike Racks -->
+        <div class="product-card">
+          <img src="assets/images/bike-rack.jpg" alt="Bike Racks" class="product-image">
+          <div class="product-content">
+            <div style="margin-bottom: 1.5rem;">
+              <h3 style="margin: 0 0 0.5rem 0;">Bike Racks</h3>
+              <p style="margin: 0; font-size: 1.3rem; font-weight: bold; color: var(--primary-brown);">$450+</p>
+            </div>
+            <p style="margin: 0 0 1rem 0; font-weight: bold; color: var(--primary-brown); font-size: 0.95rem;">Features:</p>
+            <ul style="color: #666; padding-left: 1.5rem; line-height: 1.8; margin: 0;">
+              <li>Heavy-gauge steel construction</li>
+              <li>Weather-resistant finishes</li>
+              <li>Multiple capacity options</li>
+              <li>Custom configurations available</li>
+              <li>Modern, clean aesthetics</li>
+              <li>Built for heavy-duty use</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Custom Branding Irons -->
+        <div class="product-card">
+          <img src="assets/images/branding-irons-placeholder.jpeg" alt="Custom Branding Irons" class="product-image">
+          <div class="product-content">
+            <div style="margin-bottom: 1.5rem;">
+              <h3 style="margin: 0 0 0.5rem 0;">Custom Branding Irons</h3>
+              <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem; color: #666;">Livestock $325+ / BBQ $195+</p>
+            </div>
+            <p style="margin: 0 0 1rem 0; font-weight: bold; color: var(--primary-brown); font-size: 0.95rem;">Features:</p>
+            <ul style="color: #666; padding-left: 1.5rem; line-height: 1.8; margin: 0;">
+              <li>Custom design to your specifications</li>
+              <li>Heat-treated for durability</li>
+              <li>Precise, consistent impressions</li>
+              <li>Long-lasting construction</li>
+              <li>Precision-bent accuracy</li>
+              <li>Professional-grade quality</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Decorative Fence Gates -->
+        <div class="product-card">
+          <img src="assets/images/fence-gate-placeholder.jpeg" alt="Decorative Fence Gates" class="product-image">
+          <div class="product-content">
+            <div style="margin-bottom: 1.5rem;">
+              <h3 style="margin: 0 0 0.5rem 0;">Decorative Fence Gates</h3>
+              <p style="margin: 0; font-size: 1.3rem; font-weight: bold; color: var(--primary-brown);">$1,200+</p>
+            </div>
+            <p style="margin: 0 0 1rem 0; font-weight: bold; color: var(--primary-brown); font-size: 0.95rem;">Features:</p>
+            <ul style="color: #666; padding-left: 1.5rem; line-height: 1.8; margin: 0;">
+              <li>Custom design options</li>
+              <li>Durable steel construction</li>
+              <li>Multiple finishes and colors</li>
+              <li>Professional installation support</li>
+              <li>Artistic metal bending</li>
+              <li>Security and visual appeal</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="margin-top: 3rem; margin-bottom: 2rem;">
+      <h2>Let's Get Started</h2>
+      <div class="contact-section">
+        <div class="contact-box featured">
+          <p class="mt-1" style="font-weight: bold;">Interested in which product?</p>
+          <h3 style="color: var(--white); overflow: hidden;">Bike Racks</h3>
+
+          <p class="mt-1" style="font-weight: bold;">What's your timeline?</p>
+          <h3 style="color: var(--white); overflow: hidden;">Standard</h3>
+
+          <p class="mt-1" style="font-weight: bold;">Do you need customization?</p>
+          <h3 style="color: var(--white); overflow: hidden;">Yes</h3>
+        </div>
+
+        <div class="contact-box">
+          <h3>Contact Us</h3>
+          <form>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="text" name="phone" placeholder="Phone Number (Optional)">
+            <input type="text" name="company" placeholder="Company (Optional)">
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <input type="file" name="attachment" accept=".pdf,.doc,.docx,.dwg,.zip,.jpg,.jpeg,.png">
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+
+        <div class="contact-box">
+          <p>Business hours: 8:00 AM - 4:00 PM MST <br>Monday-Friday</p>
+          <h3 class="mt-1-5">Give us a call:</h3>
+          <p>Yes, we answer our phones!</p>
+          <p class="mt-0-5 mb-0-5" style="font-size: 1rem;">1 (403) 279-6615</p>
+          <p class="mb-0-5" style="font-size: 1rem;">1 (800) 708-7453</p>
+
+          <h3 class="mt-1-5">Drop by:</h3>
+          <p>7320 30 Street S.E. Calgary, Alberta Canada T2C 1W2</p>
+
+          <h3 class="mt-1-5">Or send us an email:</h3>
+          <p>info@compassbending.com</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="capabilities.html">Capabilities</a></li>
+          <li><a href="applications.html">Applications</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Latest Blog Post</h3>
+        <div class="blog-post">
+          <h4>The Misconceptions of Hot Bends</h4>
+          <p>More often than really, a customer will reach out inquiring about a hot bending process.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
